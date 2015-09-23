@@ -1,0 +1,859 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartSeriesCrosshair</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartSeriesCrosshair">SChartSeriesCrosshair  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartSeriesCrosshair:Summary">
+    </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartSeriesCrosshair:Signature">[Foundation.Register("SChartSeriesCrosshair", true)]<br />public class  <b>SChartSeriesCrosshair</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a>,	<a href="../ShinobiCharts/IISChartCrosshair.html">IISChartCrosshair</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IDisposable">IDisposable</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartSeriesCrosshair:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeriesCrosshair:Docs:Remarks">
+			SChartSeriesCrosshair draws a small circle around the current point being tracked, accompanied by a tooltip of type `SChartSeriesCrosshairTooltip`. This tooltip has a caret that points in the direction of the circled datapoint and is capable of displaying both single and multi-value datapoints.
+
+			 <p><img src="../Images/crosshair_series.png" class="picture" /></p>
+
+			 To use this crosshair, simply assign an instance of SChartSeriesCrosshair to the chart's `crosshair` property: `chart.crosshair = [[SChartSeriesCrosshair alloc] init];`
+
+			 The crosshair is enabled with a _tap-and-hold gesture_ and will lock to the nearest series to pan through the values.
+
+			 In order for a crosshair to be displayed on a chart series, the series must have its `crosshairEnabled` property set to `YES`.  This defaults to `NO`, so you will need to set this property on the series in your chart.
+
+			 More details about this crosshair can be found in our [user guide](../../user_guide.html#Series-Crosshair).
+
+			 @available Standard
+			 @available Premium
+		</div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartSeriesCrosshair:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesCrosshair()">SChartSeriesCrosshair</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder)">SChartSeriesCrosshair</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a>)</div>
+                </td>
+                <td>
+                  <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag)">SChartSeriesCrosshair</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>
+                  <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+                </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr)">SChartSeriesCrosshair</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesCrosshair.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+                  </i>. </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesCrosshair.Tooltip">Tooltip</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartSeriesCrosshairTooltip.html">SChartSeriesCrosshairTooltip</a>
+                  </i>. </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries">TrackingSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartMappedSeries.html">SChartMappedSeries</a>
+                  </i>. </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeriesCrosshair.Hide()">Hide</a>
+                  </b>()<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart)">MoveToPointInChart</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart)">ShowAtPointInChart</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources.</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Extension Methods</h2>
+        <div class="SectionBox" id="Extension Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/ISChartCrosshair_Extensions.html#M:ShinobiCharts.ISChartCrosshair_Extensions.GetStyle(ShinobiCharts.IISChartCrosshair)">GetStyle</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/IISChartCrosshair.html">IISChartCrosshair</a>)<nobr> : <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/ISChartCrosshair_Extensions.html#M:ShinobiCharts.ISChartCrosshair_Extensions.GetTooltip(ShinobiCharts.IISChartCrosshair)">GetTooltip</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/IISChartCrosshair.html">IISChartCrosshair</a>)<nobr> : <a href="../ShinobiCharts/SChartCrosshairTooltip.html">SChartCrosshairTooltip</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/ISChartCrosshair_Extensions.html#M:ShinobiCharts.ISChartCrosshair_Extensions.SetStyle(ShinobiCharts.IISChartCrosshair,ShinobiCharts.SChartCrosshairStyle)">SetStyle</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/IISChartCrosshair.html">IISChartCrosshair</a>, <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/ISChartCrosshair_Extensions.html#M:ShinobiCharts.ISChartCrosshair_Extensions.SetTooltip(ShinobiCharts.IISChartCrosshair,ShinobiCharts.SChartCrosshairTooltip)">SetTooltip</a>
+                  </b>(<i>this</i> <a href="../ShinobiCharts/IISChartCrosshair.html">IISChartCrosshair</a>, <a href="../ShinobiCharts/SChartCrosshairTooltip.html">SChartCrosshairTooltip</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartSeriesCrosshair:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartSeriesCrosshair()">SChartSeriesCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesCrosshair():member">
+          <div class="msummary">Default constructor.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeriesCrosshair</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder)">SChartSeriesCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartSeriesCrosshair</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag)">SChartSeriesCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartSeriesCrosshair</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr)">SChartSeriesCrosshair Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartSeriesCrosshair</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartSeriesCrosshair(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle:member">
+          <div class="msummary">The handle for this class.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean):member">
+          <div class="msummary">Releases unmanaged resources.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeriesCrosshair.Hide()">Hide Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeriesCrosshair.Hide():member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("hide")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Hide</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.Hide():Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.Hide():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart)">MoveToPointInChart Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("moveToPoint:inChart:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>MoveToPointInChart</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a> pointInChart, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>pointInChart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.MoveToPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart)">ShowAtPointInChart Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("showAtPoint:inChart:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ShowAtPointInChart</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a> pointInChart, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>pointInChart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>chart</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartSeriesCrosshair.ShowAtPointInChart(CoreGraphics.CGPoint,ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesCrosshair.Style">Style Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesCrosshair.Style:member">
+          <div class="msummary">
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("style", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a> <b>Style</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Style:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Style:Remarks">
+			*  The style defining the look of the Series Crosshair's tooltip
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Style:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesCrosshair.Tooltip">Tooltip Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesCrosshair.Tooltip:member">
+          <div class="msummary">
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("tooltip", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setTooltip:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartSeriesCrosshairTooltip.html">SChartSeriesCrosshairTooltip</a> <b>Tooltip</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Tooltip:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Tooltip:Remarks">
+			*  The tooltip that will be used to display data for the series the crosshair is tracking.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.Tooltip:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries">TrackingSeries Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries:member">
+          <div class="msummary">
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("trackingSeries", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setTrackingSeries:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartMappedSeries.html">SChartMappedSeries</a> <b>TrackingSeries</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries:Remarks">
+			*  The series the crosshair is currently tracking
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartSeriesCrosshair.TrackingSeries:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

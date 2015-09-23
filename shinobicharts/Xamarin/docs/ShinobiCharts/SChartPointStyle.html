@@ -1,0 +1,856 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartPointStyle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartPointStyle">SChartPointStyle  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartPointStyle:Summary">Manages the appearance of data points within chart series.
+      </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartPointStyle:Signature">[Foundation.Register("SChartPointStyle", true)]<br />public class  <b>SChartPointStyle</b> : <a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartPointStyle:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartPointStyle:Docs:Remarks">
+        <p>
+					It is used by instances of SChartBandSeries, SChartLineSeries and SChartScatterSeries, as all of these types of
+					series can display individual points.
+				</p>
+        <p>
+					By default, points are displayed as two circles, one displayed within the other.
+					You can configure the color and radius of both circles.
+					You can also add a gradient to a point, so that it fades as you move out from its center.
+				</p>
+        <p>
+					You also have the option to display images for each point, rather than displaying two circles.
+					This is managed using the Texture property.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartPointStyle:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPointStyle()">SChartPointStyle</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag)">SChartPointStyle</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPointStyle(System.IntPtr)">SChartPointStyle</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPointStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBaselinePointStyle.html#P:ShinobiCharts.SChartBaselinePointStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class. (<i>Inherited from <a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#P:ShinobiCharts.SChartBasePointStyle.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+				The handle for this class.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#P:ShinobiCharts.SChartBasePointStyle.Color">Color</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. 
+				The color of the data points.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBaselinePointStyle.html#P:ShinobiCharts.SChartBaselinePointStyle.ColorBelowBaseline">ColorBelowBaseline</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. The color of the data points when the chart series goes below its baseline. (<i>Inherited from <a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPointStyle.InnerColor">InnerColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>.  The color of the inner sections of data points.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline">InnerColorBelowBaseline</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. The color of the inner sections of data points when the chart series goes below its baseline.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPointStyle.InnerRadius">InnerRadius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The radius of the inner section of a data point.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#P:ShinobiCharts.SChartBasePointStyle.Radius">Radius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. 
+				The radius of the outer section of a data point.
+				If a texture is used for a datapoint, the radius will set the size of the longest dimension of the image. 
+				The shorter of the two dimensions will update to keep aspect ratio.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#P:ShinobiCharts.SChartBasePointStyle.ShowPoints">ShowPoints</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				Defines whether points should be displayed on our chart series.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#P:ShinobiCharts.SChartBasePointStyle.Texture">Texture</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIImage</a>
+                  </i>. 
+				An image to be used for each data point.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#M:ShinobiCharts.SChartBasePointStyle.Copy(Foundation.NSZone)">Copy</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle)">SupplementStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartPointStyle.html">SChartPointStyle</a>)<blockquote> Updates this style object using the configuration of the passed in style.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartBaselinePointStyle.html#M:ShinobiCharts.SChartBaselinePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBaselinePointStyle)">SupplementStyleFromStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>)<blockquote>Supplements this style object by taking styles this object doesn't have, from the argument, 'style' (<i>Inherited from <a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#M:ShinobiCharts.SChartBasePointStyle.SupplementStyleFromStyle(ShinobiCharts.SChartBasePointStyle)">SupplementStyleFromStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>)<blockquote>
+				Supplements this style object by taking styles this object doesn't have, from the argument, style
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartBaselinePointStyle.html#M:ShinobiCharts.SChartBaselinePointStyle.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources. (<i>Inherited from <a href="../ShinobiCharts/SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartBasePointStyle.html#M:ShinobiCharts.SChartBasePointStyle.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources. (<i>Inherited from <a href="../ShinobiCharts/SChartBasePointStyle.html">SChartBasePointStyle</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartPointStyle:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartPointStyle()">SChartPointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPointStyle():member">
+          <div class="msummary">Default constructor
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartPointStyle</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag)">SChartPointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartPointStyle</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartPointStyle(System.IntPtr)">SChartPointStyle Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPointStyle(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartPointStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartPointStyle(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPointStyle(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPointStyle.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPointStyle.ClassHandle:member">
+          <div class="msummary">The handle for this class.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPointStyle.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPointStyle.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPointStyle.InnerColor">InnerColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPointStyle.InnerColor:member">
+          <div class="msummary"> The color of the inner sections of data points.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("innerColor", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setInnerColor:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>InnerColor</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColor:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline">InnerColorBelowBaseline Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline:member">
+          <div class="msummary">The color of the inner sections of data points when the chart series goes below its baseline.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("innerColorBelowBaseline", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setInnerColorBelowBaseline:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>InnerColorBelowBaseline</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerColorBelowBaseline:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPointStyle.InnerRadius">InnerRadius Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPointStyle.InnerRadius:member">
+          <div class="msummary">The radius of the inner section of a data point.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("innerRadius", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setInnerRadius:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>InnerRadius</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerRadius:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerRadius:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPointStyle.InnerRadius:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle)">SupplementStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle):member">
+          <div class="msummary"> Updates this style object using the configuration of the passed in style.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("supplementStyleFromStyle:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>SupplementStyle</b> (<a href="../ShinobiCharts/SChartPointStyle.html">SChartPointStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>The new style with which to update this style object.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPointStyle.SupplementStyle(ShinobiCharts.SChartPointStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

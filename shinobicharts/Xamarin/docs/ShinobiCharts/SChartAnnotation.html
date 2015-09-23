@@ -1,0 +1,1184 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartAnnotation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartAnnotation">SChartAnnotation  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartAnnotation:Summary">
+				A UIView that can be displayed on a chart - maintaining aspect ratio at all times and position in accordance with the panning of the data range.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartAnnotation:Signature">[Foundation.Register("SChartAnnotation", true)]<br />public class  <b>SChartAnnotation</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartAnnotation:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartAnnotation:Docs:Remarks">
+        <p>
+          <p>
+            <img src="../images/api_annotations.png" class="picture" />
+          </p>
+        </p>
+        <p>
+					There are several predefined annotations for convenience - these can be created using the methods below and are bands, lines and text.
+				</p>
+        <p>
+					An <tt>SChartAnnotation</tt> is fixed to a single point on the chart which means that it will pan but will remain a fixed size regardless of zoom level.
+					If you would like to annotate an area that will scale as the data range is zoomed use <a href="../ShinobiCharts/SChartAnnotationZooming.html">ShinobiCharts.SChartAnnotationZooming</a>,
+					which is anchored between two limits on either axis.
+				</p>
+        <p>
+					An annotation can be attached to one of the x axes, and one of the y-axes in the chart.
+					This is done using the <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.XAxis">SChartAnnotation.XAxis</a> and <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.YAxis">SChartAnnotation.YAxis</a>
+					properties on the annotation.
+					If an annotation is attached to an axis, the position of the annotation on the chart will correspond to its value on that axis.
+					The position of the annotation on the x axis will correspond to <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.XValue">SChartAnnotation.XValue</a> and its position
+					on the y axis will correspond to <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.YValue">SChartAnnotation.YValue</a>.
+				</p>
+        <p>
+					More information about using SChartAnnotation can be found in the user guide.
+				</p>
+        <p>
+					Warning: This feature isn't currently supported on radial charts.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartAnnotation:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnnotation()">SChartAnnotation</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect)">SChartAnnotation</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGRect</a>)</div>
+                </td>
+                <td>Instantiates a SChartAnnotation with the specified frame rectangle.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder)">SChartAnnotation</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag)">SChartAnnotation</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnnotation(System.IntPtr)">SChartAnnotation</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>.  The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.Label">Label</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UILabel</a>
+                  </i>. If this is a text annotation, this property is an accessor for the text label. Otherwise it returns null. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.Position">Position</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnnotationPosition.html">SChartAnnotationPosition</a>
+                  </i>. Sets how annotations should be drawn relative to your chart data.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.XAxis">XAxis</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>
+                  </i>.  The x axis that the annotation is attached to. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.XValue">XValue</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>.  The value on the given <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.XAxis">SChartAnnotation.XAxis</a> that the annotation is going to be anchored to. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.YAxis">YAxis</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>
+                  </i>.  The y axis that the annotation is attached to. 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnnotation.YValue">YValue</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>.  The value on the given <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.YAxis">SChartAnnotation.YAxis</a> that the annotation is going to be anchored to. 
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor)">GetAnnotation</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIFont</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>)<nobr> : <a href="../ShinobiCharts/SChartAnnotation.html">SChartAnnotation</a></nobr><blockquote> Creates an annotation Based on a UILabel with the given string at the given x and y axis Positions 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor)">GetHorizontalBand</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>)<nobr> : <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a></nobr><blockquote>Creates a horizontal band that spans the given range on the y axis and spans the whole width of the x axis. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor)">GetHorizontalLine</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>)<nobr> : <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor)">GetVerticalBand</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>)<nobr> : <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a></nobr><blockquote>Creates a vertical band that spans the given range on the x axis and spans the whole height of the y axis. 
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor)">GetVerticalLine</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>)<nobr> : <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas)">UpdateView</a>
+                  </b>(<a href="../ShinobiCharts/SChartCanvas.html">SChartCanvas</a>)<blockquote>Updates the annotation on the chart.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartAnnotation:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartAnnotation()">SChartAnnotation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnnotation():member">
+          <div class="msummary">Default constructor
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartAnnotation</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect)">SChartAnnotation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect):member">
+          <div class="msummary">Instantiates a SChartAnnotation with the specified frame rectangle.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithFrame:")]<br />public  <b>SChartAnnotation</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGRect</a> frame)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect):Parameters">
+            <dl>
+              <dt>
+                <i>frame</i>
+              </dt>
+              <dd>The frame rectangle</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(CoreGraphics.CGRect):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder)">SChartAnnotation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder):member">
+          <div class="msummary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartAnnotation</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag)">SChartAnnotation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartAnnotation</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnnotation(System.IntPtr)">SChartAnnotation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnnotation(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartAnnotation</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnnotation(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnnotation(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.ClassHandle:member">
+          <div class="msummary"> The handle for this class.
+        </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean):member">
+          <div class="msummary">Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor)">GetAnnotation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor):member">
+          <div class="msummary"> Creates an annotation Based on a UILabel with the given string at the given x and y axis Positions 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("annotationWithText:andFont:withXAxis:andYAxis:atXPosition:andYPosition:withTextColor:withBackgroundColor:")]<br />public static <a href="../ShinobiCharts/SChartAnnotation.html">SChartAnnotation</a> <b>GetAnnotation</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> text, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIFont</a> font, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> xValue, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> yValue, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> textColor, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> backgroundColor)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor):Parameters">
+            <dl>
+              <dt>
+                <i>text</i>
+              </dt>
+              <dd>The text to be displayed</dd>
+              <dt>
+                <i>font</i>
+              </dt>
+              <dd>The font that the text is displayed in</dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>The X axis that the annotation position is defined in</dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>The Y axis that the annotation position is defined in</dd>
+              <dt>
+                <i>xValue</i>
+              </dt>
+              <dd>The X position of the annotation, in terms of the axis values</dd>
+              <dt>
+                <i>yValue</i>
+              </dt>
+              <dd>The Y position of the annotation, in terms of the axis values</dd>
+              <dt>
+                <i>textColor</i>
+              </dt>
+              <dd>The color of the annotation text</dd>
+              <dt>
+                <i>backgroundColor</i>
+              </dt>
+              <dd>The color of the annotation background</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor):Returns">A new annotation</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetAnnotation(System.String,UIKit.UIFont,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,Foundation.NSObject,Foundation.NSObject,UIKit.UIColor,UIKit.UIColor):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor)">GetHorizontalBand Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):member">
+          <div class="msummary">Creates a horizontal band that spans the given range on the y axis and spans the whole width of the x axis. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("horizontalBandAtPosition:andMaxY:withXAxis:andYAxis:withColor:")]<br />public static <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a> <b>GetHorizontalBand</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> minY, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> maxY, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> color)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Parameters">
+            <dl>
+              <dt>
+                <i>minY</i>
+              </dt>
+              <dd>The lower bound of the band range</dd>
+              <dt>
+                <i>maxY</i>
+              </dt>
+              <dd>The upper bound of the band range</dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>The X axis that the annotation spans</dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>The Y axis that the annotation range is defined in</dd>
+              <dt>
+                <i>color</i>
+              </dt>
+              <dd>The color of the band</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Returns">
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor)">GetHorizontalLine Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("horizontalLineAtPosition:withXAxis:andYAxis:withWidth:withColor:")]<br />public static <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a> <b>GetHorizontalLine</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> yValue, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a> width, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> color)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Parameters">
+            <dl>
+              <dt>
+                <i>yValue</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>width</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>color</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetHorizontalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor)">GetVerticalBand Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):member">
+          <div class="msummary">Creates a vertical band that spans the given range on the x axis and spans the whole height of the y axis. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("verticalBandAtPosition:andMaxX:withXAxis:andYAxis:withColor:")]<br />public static <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a> <b>GetVerticalBand</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> minX, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> maxX, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> color)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Parameters">
+            <dl>
+              <dt>
+                <i>minX</i>
+              </dt>
+              <dd>The lower bound of the band range</dd>
+              <dt>
+                <i>maxX</i>
+              </dt>
+              <dd>The upper bound of the band range</dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>The X axis that the annotation range is defined in</dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>The Y axis that the annotation spans</dd>
+              <dt>
+                <i>color</i>
+              </dt>
+              <dd>The color of the band</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Returns">
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalBand(Foundation.NSObject,Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,UIKit.UIColor):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor)">GetVerticalLine Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("verticalLineAtPosition:withXAxis:andYAxis:withWidth:withColor:")]<br />public static <a href="../ShinobiCharts/SChartAnnotationZooming.html">SChartAnnotationZooming</a> <b>GetVerticalLine</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> xValue, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> xAxis, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> yAxis, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a> width, <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> color)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Parameters">
+            <dl>
+              <dt>
+                <i>xValue</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>xAxis</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>yAxis</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>width</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>color</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.GetVerticalLine(Foundation.NSObject,ShinobiCharts.SChartAxis,ShinobiCharts.SChartAxis,System.nfloat,UIKit.UIColor):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.Label">Label Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.Label:member">
+          <div class="msummary">If this is a text annotation, this property is an accessor for the text label. Otherwise it returns null. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("label", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setLabel:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UILabel</a> <b>Label</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.Label:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.Label:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.Label:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.Position">Position Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.Position:member">
+          <div class="msummary">Sets how annotations should be drawn relative to your chart data.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("position")]<br />[set: Foundation.Export("setPosition:")]<br />public virtual <a href="../ShinobiCharts/SChartAnnotationPosition.html">SChartAnnotationPosition</a> <b>Position</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.Position:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.Position:Remarks">
+            <ul>
+              <li>SChartAnnotationPosition.AboveData: Configures the annotation to be drawn in front of your chart data.</li>
+              <li>SChartAnnotationPosition.BelowData: Configures the annotation to be drawn underneath your chart data.</li>
+            </ul>
+				In most cases, we will want the annotation to be drawn in front of the chart data, and so by default this is set to
+				<a href="../ShinobiCharts/SChartAnnotationPosition.html#F:ShinobiCharts.SChartAnnotationPosition.AboveData">SChartAnnotationPosition.AboveData</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.Position:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas)">UpdateView Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas):member">
+          <div class="msummary">Updates the annotation on the chart.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("updateViewWithCanvas:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>UpdateView</b> (<a href="../ShinobiCharts/SChartCanvas.html">SChartCanvas</a> canvas)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas):Parameters">
+            <dl>
+              <dt>
+                <i>canvas</i>
+              </dt>
+              <dd>The <a href="../ShinobiCharts/SChartCanvas.html">ShinobiCharts.SChartCanvas</a>, generally obtained from the chart object <a href="../ShinobiCharts/ShinobiChart.html#P:ShinobiCharts.ShinobiChart.Canvas">ShinobiChart.Canvas</a></dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas):Remarks">Override this method to provide custom updating of the annotation while it is being positioned on the chart.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnnotation.UpdateView(ShinobiCharts.SChartCanvas):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.XAxis">XAxis Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.XAxis:member">
+          <div class="msummary"> The x axis that the annotation is attached to. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("xAxis", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setXAxis:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> <b>XAxis</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.XAxis:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.XAxis:Remarks"> A null value will cause the view to be displayed at the midpoint of the width of the chart plot area. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.XAxis:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.XValue">XValue Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.XValue:member">
+          <div class="msummary"> The value on the given <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.XAxis">SChartAnnotation.XAxis</a> that the annotation is going to be anchored to. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("xValue", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setXValue:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>XValue</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.XValue:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.XValue:Remarks"> A null value will cause the view to be displayed at the midpoint of the Width of the chart plot area. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.XValue:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.YAxis">YAxis Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.YAxis:member">
+          <div class="msummary"> The y axis that the annotation is attached to. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yAxis", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setYAxis:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a> <b>YAxis</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.YAxis:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.YAxis:Remarks">A null value will cause the view to be displayed at the midpoint of the height of the chart plot area. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.YAxis:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnnotation.YValue">YValue Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnnotation.YValue:member">
+          <div class="msummary"> The value on the given <a href="../ShinobiCharts/SChartAnnotation.html#P:ShinobiCharts.SChartAnnotation.YAxis">SChartAnnotation.YAxis</a> that the annotation is going to be anchored to. 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yValue", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYValue:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>YValue</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnnotation.YValue:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.YValue:Remarks"> A null value will cause the view to be displayed at the midpoint of the height of the chart plot area. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnnotation.YValue:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

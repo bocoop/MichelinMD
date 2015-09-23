@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F9E17C73-E4A7-432C-833A-7A110DDCC4A2}") = "ColumnSeries", "ColumnSeries.csproj", "{DF4CE082-1563-488A-8227-95395A5DC383}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|iPhone.Build.0 = Debug|iPhone
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|iPhone.ActiveCfg = Release|iPhone
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|iPhone.Build.0 = Release|iPhone
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{DF4CE082-1563-488A-8227-95395A5DC383}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ColumnSeries.csproj
+	EndGlobalSection
+EndGlobal

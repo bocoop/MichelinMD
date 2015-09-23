@@ -1,0 +1,30 @@
+/* This file contains just the overrides for this specific product - e.g.
+   colours. It'd be nice if we could have variables. But we can't */
+
+
+blockquote {
+  border-color: rgb(113, 32, 123);
+  background-color: rgba(113, 32, 123, 0.1);
+}
+
+.warning {
+  border-left-color: rgb(113, 32, 123);
+}
+
+.tocify li a:hover {
+  border-left-color: rgb(113, 32, 123);
+}
+
+.tocify li.active a {
+  color: rgb(113, 32, 123);
+  border-left-color: rgb(113, 32, 123);
+}
+
+/* Classs Overrides */
+.label-default{
+   background-color: rgb(113, 32, 123);
+}
+
+.bs-callout-warning {
+  border-left-color: rgb(113, 32, 123);
+}

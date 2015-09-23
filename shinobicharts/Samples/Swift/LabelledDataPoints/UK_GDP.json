@@ -1,0 +1,22 @@
+[
+  {
+  "year": 2009,
+  "growthRate": -5.2
+  },
+  {
+  "year": 2010,
+  "growthRate": 1.7
+  },
+  {
+  "year": 2011,
+  "growthRate": 1.1
+  },
+  {
+  "year": 2012,
+  "growthRate": 0.3
+  },
+  {
+  "year": 2013,
+  "growthRate": 1.7
+  }
+]

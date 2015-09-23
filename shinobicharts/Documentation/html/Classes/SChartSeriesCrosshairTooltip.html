@@ -1,0 +1,619 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SChartSeriesCrosshairTooltip Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../../index.html">shinobicharts </a></h1>
+				<a id="developerHome" href="../../index.html">Scott Logic Ltd</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SChartSeriesCrosshairTooltip Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/caretWidth">&nbsp;&nbsp;&nbsp;&nbsp;caretWidth</option>
+	
+	<option value="//api/name/drawer">&nbsp;&nbsp;&nbsp;&nbsp;drawer</option>
+	
+	<option value="//api/name/positioner">&nbsp;&nbsp;&nbsp;&nbsp;positioner</option>
+	
+	<option value="//api/name/shapeLayer">&nbsp;&nbsp;&nbsp;&nbsp;shapeLayer</option>
+	
+	<option value="//api/name/styler">&nbsp;&nbsp;&nbsp;&nbsp;styler</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/setPosition:trackingSeries:forDataPoint:onChart:">&nbsp;&nbsp;&nbsp;&nbsp;- setPosition:trackingSeries:forDataPoint:onChart:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/caretWidth">caretWidth</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/drawer">drawer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/positioner">positioner</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shapeLayer">shapeLayer</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/styler">styler</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPosition:trackingSeries:forDataPoint:onChart:">setPosition:trackingSeries:forDataPoint:onChart:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SChartSeriesCrosshairTooltip Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../../index.html">Index</a></li>
+	<li><a href="../../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SChartSeriesCrosshairTooltip Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/SChartCrosshairMultiValueTooltip.html">SChartCrosshairMultiValueTooltip</a> : <a href="../Classes/SChartCrosshairTooltip.html">SChartCrosshairTooltip</a> : UIView</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SChartSeriesCrosshairTooltip.h</td>
+</tr><tr>
+	<td class="specification-title">Availability</td>
+	<td class="specification-value">Standard<br />Premium</td>
+</tr><tr>
+	<td class="specification-title">Related samples</td>
+	<td class="specification-value"></td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>An extension of <a href="../Classes/SChartCrosshairMultiValueTooltip.html"><code>SChartCrosshairMultiValueTooltip</code></a>, this tooltip adds a caret that points in the direction of the current tracked datapoint and sets its background color to be the same as that of the current tracked series.</p>
+
+<p>When the series goes beyond the plot area&rsquo;s bounds (the view within which the series is drawn), the tooltip by default will remain positioned within the frame&rsquo;s bounds and point to the offscreen datapoint. This behaviour can be altered by implementing classes that conform to <a href="../Protocols/SChartSeriesCrosshairTooltipPositionerProtocol.html"><code>SChartSeriesCrosshairTooltipPositionerProtocol</code></a> and <a href="../Protocols/SChartSeriesCrosshairTooltipDrawerProtocol.html"><code>SChartSeriesCrosshairTooltipDrawerProtocol</code></a>.</p>
+
+<p>Altering how the tooltip is styled can be done by subclassing <a href="../Classes/SChartSeriesCrosshairTooltipStyler.html"><code>SChartSeriesCrosshairTooltipStyler</code></a> or creating a class that conforms to <a href="../Protocols/SChartSeriesCrosshairTooltipStylerProtocol.html"><code>SChartSeriesCrosshairTooltipStylerProtocol</code></a>.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/caretWidth">&nbsp;&nbsp;caretWidth</a></code>
+		<span class="tooltip"><p>Defines the width of the tooltip&rsquo;s caret at its base.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/positioner">&nbsp;&nbsp;positioner</a></code>
+		<span class="tooltip"><p>Handles the positioning of the tooltip.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/drawer">&nbsp;&nbsp;drawer</a></code>
+		<span class="tooltip"><p>Handles the drawing of the tooltip. It is expected to return a <code>CGPathRef</code> that defines the path of the tooltip.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/styler">&nbsp;&nbsp;styler</a></code>
+		<span class="tooltip"><p>Responsible for styling the tooltip.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shapeLayer">&nbsp;&nbsp;shapeLayer</a></code>
+		<span class="tooltip"><p>The layer upon which the tooltip is drawn.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPosition:trackingSeries:forDataPoint:onChart:">&ndash;&nbsp;setPosition:trackingSeries:forDataPoint:onChart:</a></code>
+		<span class="tooltip"><p>Called when the chart&rsquo;s crosshair has been moved to a new position.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/caretWidth" title="caretWidth"></a>
+	<h3 class="subsubtitle method-title">caretWidth</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Defines the width of the tooltip&rsquo;s caret at its base.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CGFloat caretWidth</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is 10.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/drawer" title="drawer"></a>
+	<h3 class="subsubtitle method-title">drawer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Handles the drawing of the tooltip. It is expected to return a <code>CGPathRef</code> that defines the path of the tooltip.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id&lt;SChartSeriesCrosshairTooltipDrawerProtocol&gt; drawer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <a href="../Classes/SChartSeriesCrosshairTooltipDrawer.html"><code>SChartSeriesCrosshairTooltipDrawer</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/positioner" title="positioner"></a>
+	<h3 class="subsubtitle method-title">positioner</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Handles the positioning of the tooltip.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id&lt;SChartSeriesCrosshairTooltipPositionerProtocol&gt; positioner</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The default is <a href="../Classes/SChartSeriesCrosshairTooltipPositioner.html"><code>SChartSeriesCrosshairTooltipPositioner</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shapeLayer" title="shapeLayer"></a>
+	<h3 class="subsubtitle method-title">shapeLayer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The layer upon which the tooltip is drawn.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) CAShapeLayer *shapeLayer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This property is exposed for use in classes conforming to <a href="../Protocols/SChartSeriesCrosshairTooltipStylerProtocol.html"><code>SChartSeriesCrosshairTooltipStylerProtocol</code></a> to apply attributes extracted from <a href="../Classes/SChartCrosshairStyle.html"><code>SChartCrosshairStyle</code></a> to the shape layer.</p>
+
+<p>NOTE: The preferred method to supply a <code>CGPathRef</code> to the shape layer is by conforming to <a href="../Protocols/SChartSeriesCrosshairTooltipDrawerProtocol.html"><code>SChartSeriesCrosshairTooltipDrawerProtocol</code></a> and returning a path using <code>newPathForTooltip:withCurrentTrackedPoint:onChart:trackingSeries:</code>. Any path set directly on this property will be overidden when the tooltip&rsquo;s position changes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/styler" title="styler"></a>
+	<h3 class="subsubtitle method-title">styler</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Responsible for styling the tooltip.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, retain) id&lt;SChartSeriesCrosshairTooltipStylerProtocol&gt; styler</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Default is <a href="../Classes/SChartSeriesCrosshairTooltipStyler.html"><code>SChartSeriesCrosshairTooltipStyler</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/setPosition:trackingSeries:forDataPoint:onChart:" title="setPosition:trackingSeries:forDataPoint:onChart:"></a>
+	<h3 class="subsubtitle method-title">setPosition:trackingSeries:forDataPoint:onChart:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called when the chart&rsquo;s crosshair has been moved to a new position.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPosition:(CGPoint)<em>position</em> trackingSeries:(SChartMappedSeries *)<em>series</em> forDataPoint:(id&lt;SChartData&gt;)<em>dataPoint</em> onChart:(ShinobiChart *)<em>chart</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>position</em></dt>
+			<dd><p>The position on the chart of the datapoint currently being tracked by the crosshair</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>series</em></dt>
+			<dd><p>The series currently being tracked by the crosshair</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dataPoint</em></dt>
+			<dd><p>The datapoint the crosshair is centered over</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>chart</em></dt>
+			<dd><p>The chart on which the tooltip will be drawn</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>In this method the tooltip is positioned, drawn and styled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SChartSeriesCrosshairTooltip.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../../index.html">Index</a></li>
+	<li><a href="../../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Scott Logic Ltd. All rights reserved. (Last updated: 2015-04-29)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

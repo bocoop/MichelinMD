@@ -1,0 +1,1262 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartAnimation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartAnimation">SChartAnimation  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartAnimation:Summary">
+				An SChartAnimation object determines how an SChartSeries is animated.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartAnimation:Signature">[Foundation.Register("SChartAnimation", true)]<br />public class  <b>SChartAnimation</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>,	<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.INSCopying</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IDisposable">IDisposable</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartAnimation:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartAnimation:Docs:Remarks">
+        <p>
+					Depending on the action which an animation is linked to, it may be triggered by different actions:
+					<ul><li>Entry Animations are triggered upon the initial addition of the series to the chart and when a series is unhidden using its hidden property.</li><li>Exit Animations are triggered when a series is hidden using its hidden property.</li></ul></p>
+        <p>
+					The code snippet below demonstrates how to set a series to fade in when entering and fade out when exiting.
+					We set the duration of both animations to be 3 seconds:
+					<table class="CodeExampleTable"><tr><td><b><font size="-1"> Example</font></b></td></tr><tr><td><pre class="">series.EntryAnimation = SChartAnimation.FadeAnimation();
+series.EntryAnimation.Duration = 3;
+series.ExitAnimation = SChartAnimation.FadeAnimation();
+series.ExitAnimation.Duration = 3;</pre></td></tr></table></p>
+        <p>
+					We updated the animation code in version 2.2 of charts.
+					As a result of these updates, the SChartAnimationCurve enum defined in earlier versions of charts has been deprecated.
+					Instead of using this, you should configure the properties of the animation to meet your needs.
+					The properties you can set on an animation are:
+					<ul><li>
+								The duration of the animation.
+								See <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.Duration">SChartAnimation.Duration</a> for more information.
+							</li><li>
+								The origin point on the chart from where the series animates to its final position.
+								See <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AbsoluteOriginX">SChartAnimation.AbsoluteOriginX</a>, <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AbsoluteOriginY">SChartAnimation.AbsoluteOriginY</a>,
+								<a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.NormalisedOriginX">SChartAnimation.NormalisedOriginX</a> and <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.NormalisedOriginY">SChartAnimation.NormalisedOriginY</a>
+								for more information.
+							</li><li>
+								How the chart series scales as the animation progresses.
+								See <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.XScaleCurve">SChartAnimation.XScaleCurve</a>, <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.YScaleCurve">SChartAnimation.YScaleCurve</a>
+								or <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.RadiusCurve">SChartAnimation.RadiusCurve</a> for more information.
+							</li><li>
+								How the transparency of the series varies over the period of the animation.
+								See <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AlphaCurve">SChartAnimation.AlphaCurve</a> for more information.
+							</li><li>
+								For pie/donut chart series, you can specify how the series rotates around the origin during the animation.
+								See <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AngleCurve">SChartAnimation.AngleCurve</a> for more information.
+							</li></ul></p>
+        <p>
+					The <a href="../ShinobiCharts/SChartAnimation.html">ShinobiCharts.SChartAnimation</a> object is composed of several objects conforming to the
+					<a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">ShinobiCharts.SChartAnimationCurveProtocol</a> protocol, which each describe the transition of an aspect of the chart series
+					from the start of the animation to the end.
+					We have defined concrete implementations of this protocol to support common animation use cases which you might have.
+					Some of the concrete animation curve classes are:
+					<ul><li><a href="../ShinobiCharts/SChartLinearAnimationCurve.html">ShinobiCharts.SChartLinearAnimationCurve</a> - a linear animation.
+							</li><li><a href="../ShinobiCharts/SChartEaseInAnimationCurve.html">ShinobiCharts.SChartEaseInAnimationCurve</a> - animation which starts off gently, then accelerates in the
+								second half of the animation.
+							</li><li><a href="../ShinobiCharts/SChartEaseOutAnimationCurve.html">ShinobiCharts.SChartEaseOutAnimationCurve</a> - animation which starts off at a steady speed, then decelerates
+								in the second half of the animation, creating a slow exit phase.
+							</li><li><a href="../ShinobiCharts/SChartEaseInOutAnimationCurve.html">ShinobiCharts.SChartEaseInOutAnimationCurve</a> - animation which starts off gently, accelerates through the
+								middle part of the animation, then decelerates at the end to finish gently.
+							</li><li><a href="../ShinobiCharts/SChartBounceAnimationCurve.html">ShinobiCharts.SChartBounceAnimationCurve</a> - animation where the series goes past its final value, then bounces
+								back to it at the end.
+							</li></ul></p>
+        <p>
+					Other animation curves are also available, see the API documentation for more information.
+				</p>
+        <p>
+					To save you having to create animation classes from scratch, we've provided some pre-defined types for you.
+					Have a look at the factory methods we've provided below.
+				</p>
+        <p>
+					Warning: This feature isn't currently supported on radial charts.
+					More information about using SChartAnimation can be found in our tutorial: 'Animating ShinobiChart Series'
+					(http://www.shinobicontrols.com/blog/posts/2013/03/14/animating-shinobichart-series).
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartAnimation:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnimation()">SChartAnimation</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag)">SChartAnimation</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartAnimation(System.IntPtr)">SChartAnimation</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.AbsoluteOriginX">AbsoluteOriginX</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. 
+				If this property is set, this will be the origin value in x in data terms -
+				a curve returning 0 maps to this value, whereas a curve returning 1 maps to the final true value of the series.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.AbsoluteOriginY">AbsoluteOriginY</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. 
+				If this property is set, this will be the origin value in y in data terms -
+				a curve returning 0 maps to this value, whereas a curve returning 1 maps to the final true value.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.AlphaCurve">AlphaCurve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. The animation curve describing how the transparency of the series changes during the animation.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.AngleCurve">AngleCurve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. 
+				The animation curve describes the transition of the series around its origin.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.Curve">Curve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. The overall animation curve for the animation.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.Duration">Duration</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The duration of the animation.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.NormalisedOriginX">NormalisedOriginX</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>. 
+				This property enables you to set a normalized point of origin along the x axis for the animation.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.NormalisedOriginY">NormalisedOriginY</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>. 
+				This property enables you to set a normalized point of origin along the y axis for the animation.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.RadiusCurve">RadiusCurve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. 
+				The animation curve describing how the radius/radii of the series change during the animation.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.XScaleCurve">XScaleCurve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. 
+				The animation curve describing the transition of the series parallel to the x axis.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartAnimation.YScaleCurve">YScaleCurve</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+                  </i>. 
+				The animation curve describing the transition of the series parallel to the y axis.
+			</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone)">Copy</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.FadeAnimation()">FadeAnimation</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>Returns an animation where the series fades.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.GrowAnimation()">GrowAnimation</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>
+				Returns an animation where the series scales from its centre.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation()">GrowHorizontalAnimation</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>
+				Returns an animation where the series scales from its leftmost point.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation()">GrowVerticalAnimation</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>
+				Returns an animation where the series scales from its lowest point.
+			</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.RadialSelection()">RadialSelection</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>Returns an animation where the series rotates with a bounce and changes its protrusion with a bounce.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>static </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.TelevisionAnimation()">TelevisionAnimation</a>
+                  </b>()<nobr> : <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a></nobr><blockquote>
+				Returns an animation where the series mimics the entrance/exit of the picture of an old television.
+			</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartAnimation:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartAnimation()">SChartAnimation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnimation():member">
+          <div class="msummary">Default constructor.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartAnimation</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag)">SChartAnimation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartAnimation</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartAnimation(System.IntPtr)">SChartAnimation Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartAnimation(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartAnimation</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartAnimation(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartAnimation(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginX">AbsoluteOriginX Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginX:member">
+          <div class="msummary">
+				If this property is set, this will be the origin value in x in data terms -
+				a curve returning 0 maps to this value, whereas a curve returning 1 maps to the final true value of the series.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("absoluteOriginX", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setAbsoluteOriginX:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>AbsoluteOriginX</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginX:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginX:Remarks">
+				Points will scale from this value along the x axis in either direction.
+				If this property is not set, the animation will use a normalized origin on x - see <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.NormalisedOriginX">SChartAnimation.NormalisedOriginX</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginX:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginY">AbsoluteOriginY Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginY:member">
+          <div class="msummary">
+				If this property is set, this will be the origin value in y in data terms -
+				a curve returning 0 maps to this value, whereas a curve returning 1 maps to the final true value.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("absoluteOriginY", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setAbsoluteOriginY:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>AbsoluteOriginY</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginY:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginY:Remarks">
+				Points will scale from this value along the y axis in either direction.
+				If this property is not set, the animation will use a normalized origin on y - see <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.NormalisedOriginY">SChartAnimation.NormalisedOriginY</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AbsoluteOriginY:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.AlphaCurve">AlphaCurve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.AlphaCurve:member">
+          <div class="msummary">The animation curve describing how the transparency of the series changes during the animation.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("alphaCurve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setAlphaCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>AlphaCurve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.AlphaCurve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AlphaCurve:Remarks">
+				This curve describes how the alpha value of the colors of the series scale from some initial alpha value at the start of the animation
+				to some destination alpha at the end of the animation.
+				We multiply the value returned by this curve with the colors set to the series, therefore a curve value of 0 results in a completely
+				transparent color and a value of 1 results in the final alpha value of the series color.
+				This curve applies to both cartesian and pie/donut series.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AlphaCurve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.AngleCurve">AngleCurve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.AngleCurve:member">
+          <div class="msummary">
+				The animation curve describes the transition of the series around its origin.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("angleCurve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setAngleCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>AngleCurve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.AngleCurve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AngleCurve:Remarks">
+            <p>
+					This curve only applies to pie/donut chart series.
+				</p>
+            <p>
+					This curve describes how the points of the series rotate around the centre of the series from some initial angle at the start of the animation
+					to a destination angle at the end of the animation.
+					An angle scale value of 0 maps to the original angle whereas a value of 1 maps to the destination angle.
+				</p>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.AngleCurve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.ClassHandle:member">
+          <div class="msummary">The handle for this class.
+        </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone)">Copy Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("copyWithZone:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>Copy</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a> zone)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone):Parameters">
+            <dl>
+              <dt>
+                <i>zone</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.Copy(Foundation.NSZone):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.Curve">Curve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.Curve:member">
+          <div class="msummary">The overall animation curve for the animation.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("curve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>Curve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.Curve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.Curve:Remarks">Setting this curve will set each of the other curves for the animation to this same curve.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.Curve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.Duration">Duration Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.Duration:member">
+          <div class="msummary">The duration of the animation.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("duration", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setDuration:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>Duration</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.Duration:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.Duration:Remarks">The time taken, in seconds, for the animation to progress from start to finish.
+ The duration of the animations returned by the factory methods provided is 2.4 seconds.
+ The duration of an animation created via alloc/init is 1/64 seconds (instant).
+ Use this property to configure how long an animation should take to complete.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.Duration:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.FadeAnimation()">FadeAnimation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.FadeAnimation():member">
+          <div class="msummary">Returns an animation where the series fades.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("fadeAnimation")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>FadeAnimation</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.FadeAnimation():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.FadeAnimation():Remarks">By default, the normalized X and Y are both set to <tt>0.5f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.FadeAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.GrowAnimation()">GrowAnimation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.GrowAnimation():member">
+          <div class="msummary">
+				Returns an animation where the series scales from its centre.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("growAnimation")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>GrowAnimation</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.GrowAnimation():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowAnimation():Remarks">
+				This is the default entry &amp; exit animation for <a href="../ShinobiCharts/SChartScatterSeries.html">ShinobiCharts.SChartScatterSeries</a>, <a href="../ShinobiCharts/SChartDonutSeries.html">ShinobiCharts.SChartDonutSeries</a>,
+				and <a href="../ShinobiCharts/SChartPieSeries.html">ShinobiCharts.SChartPieSeries</a>.
+				By default, the normalized X and Y are both set to <tt>0.5f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation()">GrowHorizontalAnimation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation():member">
+          <div class="msummary">
+				Returns an animation where the series scales from its leftmost point.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("growHorizontalAnimation")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>GrowHorizontalAnimation</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation():Remarks">
+				This is the default entry &amp; exit animation for <a href="../ShinobiCharts/SChartBarSeries.html">ShinobiCharts.SChartBarSeries</a>.
+				By default, the normalized X is set to <tt>0.0f</tt>, normalized Y is set to <tt>0.5f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.
+				If a baseline is set on a bar series, and a custom origin has not been set for the animation, the baseline will be used as the origin instead.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowHorizontalAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation()">GrowVerticalAnimation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation():member">
+          <div class="msummary">
+				Returns an animation where the series scales from its lowest point.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("growVerticalAnimation")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>GrowVerticalAnimation</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation():Remarks">
+				This is the default entry &amp; exit animation for <a href="../ShinobiCharts/SChartColumnSeries.html">ShinobiCharts.SChartColumnSeries</a>, <a href="../ShinobiCharts/SChartOHLCSeries.html">ShinobiCharts.SChartOHLCSeries</a>,
+				and <a href="../ShinobiCharts/SChartCandlestickSeries.html">ShinobiCharts.SChartCandlestickSeries</a>.
+				By default, the normalized X is set to <tt>0.5f</tt>, normalized Y is set to <tt>0.0f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.
+				If a baseline is set on a column, OHLC, or candlestick series, and a custom origin has not been set on the animation,
+				the baseline will be used as the origin instead.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.GrowVerticalAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.NormalisedOriginX">NormalisedOriginX Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.NormalisedOriginX:member">
+          <div class="msummary">
+				This property enables you to set a normalized point of origin along the x axis for the animation.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("normalisedOriginX", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setNormalisedOriginX:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a> <b>NormalisedOriginX</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginX:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginX:Remarks">
+				This value is normalized using the range of the series which the animation is applied to.
+				For example, setting a <tt>NormalisedOriginX</tt> of <tt>0.0f</tt> would cause the series to animate from its left-most point.
+				Setting a a <tt>NormalisedOriginX</tt> of <tt>1.0f</tt> would cause the series to animate from its right-most point.
+				By default, this property is set to <tt>0.5f</tt>. However, if a value is set for <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AbsoluteOriginX">SChartAnimation.AbsoluteOriginX</a>,
+				this property will be ignored.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginX:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.NormalisedOriginY">NormalisedOriginY Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.NormalisedOriginY:member">
+          <div class="msummary">
+				This property enables you to set a normalized point of origin along the y axis for the animation.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("normalisedOriginY", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setNormalisedOriginY:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a> <b>NormalisedOriginY</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginY:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginY:Remarks">
+				This value is normalized using the range of the series which the animation is applied to.
+				For example, setting a <tt>NormalisedOriginY</tt> of <tt>0.0f</tt> would cause the series to animate from its lowest point.
+				Setting a <tt>NormalisedOriginY</tt> of <tt>1.0f</tt> would cause the series to animate from its highest point.
+				By default, this property is set to <tt>0.5f</tt>. However, if a value is set for <a href="../ShinobiCharts/SChartAnimation.html#P:ShinobiCharts.SChartAnimation.AbsoluteOriginY">SChartAnimation.AbsoluteOriginY</a>,
+				this property will be ignored.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.NormalisedOriginY:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.RadialSelection()">RadialSelection Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.RadialSelection():member">
+          <div class="msummary">Returns an animation where the series rotates with a bounce and changes its protrusion with a bounce.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("radialSelection")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>RadialSelection</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.RadialSelection():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.RadialSelection():Remarks">
+			This is the default selection animation for SChartDonutSeries and SChartPieSeries.
+			By default, the normalized X and Y are both set to <tt>0.5f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.RadialSelection():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.RadiusCurve">RadiusCurve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.RadiusCurve:member">
+          <div class="msummary">
+				The animation curve describing how the radius/radii of the series change during the animation.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("radiusCurve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRadiusCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>RadiusCurve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.RadiusCurve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.RadiusCurve:Remarks">
+				This curve describes how both the x values and the y values of a series scale from some origin to their true values.
+				It is mostly used for pie/donut series, often in conjunction with an origin at the centre of the pie/donut series.
+				Setting this curve will override any previously set values for XScaleCurve and YScaleCurve.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.RadiusCurve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartAnimation.TelevisionAnimation()">TelevisionAnimation Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartAnimation.TelevisionAnimation():member">
+          <div class="msummary">
+				Returns an animation where the series mimics the entrance/exit of the picture of an old television.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("televisionAnimation")]<br />public static <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a> <b>TelevisionAnimation</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartAnimation.TelevisionAnimation():Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.TelevisionAnimation():Remarks">
+				This is the default entry &amp; exit animation for <a href="../ShinobiCharts/SChartLineSeries.html">ShinobiCharts.SChartLineSeries</a>, <a href="../ShinobiCharts/SChartStepLineSeries.html">ShinobiCharts.SChartStepLineSeries</a>,
+				and <a href="../ShinobiCharts/SChartBandSeries.html">ShinobiCharts.SChartBandSeries</a>.
+				By default, the normalized X and Y are both set to <tt>0.5f</tt>, and the animation duration is set to <tt>2.4</tt> seconds.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartAnimation.TelevisionAnimation():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.XScaleCurve">XScaleCurve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.XScaleCurve:member">
+          <div class="msummary">
+				The animation curve describing the transition of the series parallel to the x axis.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("xScaleCurve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setXScaleCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>XScaleCurve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.XScaleCurve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.XScaleCurve:Remarks">
+				This curve describes how the x values of the series scale from some origin along the x axis at the start of the animation to
+				their destination at the end of the animation.
+				An xScale value of 0 maps a point at the animation origin whereas a value of 1 maps the point at it's true value perpendicular to the x axis.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.XScaleCurve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartAnimation.YScaleCurve">YScaleCurve Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartAnimation.YScaleCurve:member">
+          <div class="msummary">
+				The animation curve describing the transition of the series parallel to the y axis.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yScaleCurve", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYScaleCurve:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a> <b>YScaleCurve</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartAnimation.YScaleCurve:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.YScaleCurve:Remarks">
+				This curve describes how the y values of the series scale from some origin along the y axis at the start of the animation to
+				their destination at the end of the animation.
+				An yScale value of 0 maps a point at the animation origin whereas a value of 1 maps the point at it's true value perpendicular to the y axis.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartAnimation.YScaleCurve:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

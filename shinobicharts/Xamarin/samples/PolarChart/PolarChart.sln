@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{130AE57B-8334-4EF3-971A-2559E0B11F4F}") = "PolarChart", "PolarChart.csproj", "{CB3E0A92-48BF-423C-AC66-FE12B739468C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|iPhone.Build.0 = Release|iPhone
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{CB3E0A92-48BF-423C-AC66-FE12B739468C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = PolarChart.csproj
+	EndGlobalSection
+EndGlobal

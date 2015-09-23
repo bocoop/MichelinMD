@@ -1,0 +1,2791 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartTheme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartTheme">SChartTheme  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartTheme:Summary">
+				The SChartTheme class is responsible for storing styling information for the chart's visual components,
+				such as its titles, axes, tickmarks, and series.
+			</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartTheme:Signature">[Foundation.Register("SChartTheme", true)]<br />public class  <b>SChartTheme</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>,	<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.INSCopying</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IDisposable">IDisposable</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartTheme:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartTheme:Docs:Remarks">
+        <p>
+					Each theme contains a number of style objects that affect the look of certain aspects of the chart such
+					as its axis, its title or its crosshair. These style objects are exposed as properties on the theme.
+					There are also a number of style objects for each series type - for most series, six different styles
+					are provided per theme. Radial and financial (ohlc, candlestick) series only have a one style per theme.
+					These are accessed via a method on the theme, for example line series styles are returned by:
+<table class="CodeExampleTable"><tr><td><b><font size="-1"> Example</font></b></td></tr><tr><td><pre class="">
+SChartLineSeriesStyle thirdSelectedLineSeriesStyle = theme.GetLineSeriesStyle(2, true);
+SChartColumnSeriesStyle secondUnselectedColumnSeriesStyle = theme.GetColumnSeriesStyle(2, false);
+</pre></td></tr></table>
+					Note that if there are more series on the chart than there are series styles provided by the theme,
+					the chart will loop through the style objects it has, using the first style object again once it has
+					cycled through its available styles.
+				</p>
+        <p>
+					A theme is applied to a chart via the
+					<a href="../ShinobiCharts/ShinobiChart.html#M:ShinobiCharts.ShinobiChart.ApplyTheme(ShinobiCharts.SChartTheme)">ShinobiChart.ApplyTheme(SChartTheme)</a> method. For example:
+<table class="CodeExampleTable"><tr><td><b><font size="-1"> Example</font></b></td></tr><tr><td><pre class="">
+chart.ApplyTheme(theme);
+</pre></td></tr></table>
+					The <tt>ApplyTheme</tt> method is called on the chart upon the initialisation of the chart, applying
+					either the theme you provided to the chart via
+					<a href="../ShinobiCharts/ShinobiChart.html#C:ShinobiCharts.ShinobiChart(CoreGraphics.CGRect,ShinobiCharts.SChartTheme)">ShinobiChart(CoreGraphics.CGRect, SChartTheme)</a>
+					(or <a href="../ShinobiCharts/ShinobiChart.html#C:ShinobiCharts.ShinobiChart(CoreGraphics.CGRect,ShinobiCharts.SChartTheme,ShinobiCharts.SChartAxisType,ShinobiCharts.SChartAxisType)">ShinobiChart(CoreGraphics.CGRect, SChartTheme, SChartAxisType, SChartAxisType)</a>)
+					or the default theme. Applying a theme to a chart will overwrite any changes to any of the style objects
+					on the chart or its series previously - you should make any further customisations after applying the theme.
+				</p>
+        <p>
+					ShinobiCharts comes with several pre-created subclasses of SChartTheme:
+					<ul><li>iOS Seven Theme: Solid colors without gradients, crisp and clear text (default iOS 7+)</li><li>Light Theme: Brighter colors based on a white background (default pre-iOS 7)</li><li>Dark Theme: Softer colors on a black background</li></ul></p>
+        <p>
+					A chart running on a version of iOS older than iOS 7 will use the light theme by default, whereas
+					a chart running on iOS 7 or later will default to using our SChartiOS7Theme.
+					All themes are, however, available to all versions of iOS - just use them as normal. For example,
+					you could use SChartiOS7Theme on iOS 5.
+				</p>
+        <p>
+					There are two recommended ways to provide your own custom theme:
+					<ul><li>
+							You can use one of the provided SChartTheme classes and customise the style objects provided on it.
+						</li><li>
+							You can subclass one of the SChartTheme classes, customise the style objects provided, and
+							override the <tt>Get{Line, Band, Bar, Column, Donut, Ohlc}SeriesStyle</tt> method to return your
+							own series styles.
+						</li></ul></p>
+        <p>
+					More information about using SChartTheme can be found in the user guide.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartTheme:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartTheme()">SChartTheme</a>
+                    </b>()</div>
+                </td>
+                <td> 
+          Initializes and returns a newly allocated theme object with default settings.
+	  </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag)">SChartTheme</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartTheme(System.IntPtr)">SChartTheme</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BarLineWidth">BarLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all bar series
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BlackColor">BlackColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Black palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BlackColorLowAlpha">BlackColorLowAlpha</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Black palette color with reduced alpha.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BlueColorDark">BlueColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Blue palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BlueColorLight">BlueColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Blue palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BoldFontName">BoldFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the bold font to use within the theme.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.BoxGestureStyle">BoxGestureStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartBoxGestureStyle.html">SChartBoxGestureStyle</a>
+                  </i>. Style options relating to the box gesture.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.ChartStyle">ChartStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a>
+                  </i>. Style options relating to the overall chart for cartesian charts.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.ChartTitleStyle">ChartTitleStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartMainTitleStyle.html">SChartMainTitleStyle</a>
+                  </i>. Style options relating to the chart title.</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+        The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.ColumnLineWidth">ColumnLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all column series
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.CrosshairStyle">CrosshairStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+                  </i>. Style options relating to the chart crosshair.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.DonutCrustThickness">DonutCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all donut series
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.GreenColorBrightLight">GreenColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.GreenColorDark">GreenColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.GreenColorLight">GreenColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.LegendStyle">LegendStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a>
+                  </i>. Style options relating to the chart legend.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.LightFontName">LightFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the light font to use within the theme.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.LineWidth">LineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line width across all line series.
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.OrangeColorDark">OrangeColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Orange palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.OrangeColorLight">OrangeColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Orange palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.PieCrustThickness">PieCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all pie series
+			</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.PurpleColorDark">PurpleColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Purple palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.PurpleColorLight">PurpleColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Purple palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.RadialChartStyle">RadialChartStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a>
+                  </i>. Style options relating to the overall chart for radial charts.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.RedColorBrightLight">RedColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.RedColorDark">RedColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.RedColorLight">RedColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.RegularFontName">RegularFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the regular font to use within the theme.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.XAxisRadialStyle">XAxisRadialStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the radial axis (x-axis) of any radial charts.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.XAxisStyle">XAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the x axis.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.YAxisRadialStyle">YAxisRadialStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the polar axis (y-axis) of any radial charts.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.YAxisStyle">YAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the y axis.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.YellowColorDark">YellowColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Yellow palette color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartTheme.YellowColorLight">YellowColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Yellow palette color with increased brightness.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean)">AddBandSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of band series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean)">AddBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of bar series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean)">AddCandlestickSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of candlestick series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean)">AddColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of column series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean)">AddDonutSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Encodes the donut series style object and stores in the array of donut series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean)">AddLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Adds a series style to the array of line series styles contained within the theme.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean)">AddOHLCSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of ohlc series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean)">AddScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of scatter series styles.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle)">ConfigureBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle)">ConfigureColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle)">ConfigureLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle)">ConfigureScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone)">Copy</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean)">GetBandSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean)">GetBarSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean)">GetBubbleSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBubbleSeriesStyle.html">SChartBubbleSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean)">GetCandlestickSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean)">GetColumnSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean)">GetDonutSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean)">GetLineSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean)">GetOHLCSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean)">GetRadialLineSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartRadialLineSeriesStyle.html">SChartRadialLineSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean)">GetScatterSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span></blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartTheme.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartTheme:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartTheme()">SChartTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartTheme():member">
+          <div class="msummary"> 
+          Initializes and returns a newly allocated theme object with default settings.
+	  </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartTheme</b> ()</div>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartTheme():Returns">An initialized theme object or null if the object couldn't be created.</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag)">SChartTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartTheme</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartTheme(System.IntPtr)">SChartTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartTheme(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartTheme</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartTheme(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartTheme(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean)">AddBandSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of band series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addBandSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddBandSeriesStyle</b> (<a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean)">AddBarSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of bar series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addBarSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddBarSeriesStyle</b> (<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean)">AddCandlestickSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of candlestick series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addCandlestickSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddCandlestickSeriesStyle</b> (<a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean)">AddColumnSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of column series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addColumnSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddColumnSeriesStyle</b> (<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean)">AddDonutSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean):member">
+          <div class="msummary">Encodes the donut series style object and stores in the array of donut series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addDonutSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddDonutSeriesStyle</b> (<a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean)">AddLineSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean):member">
+          <div class="msummary">Adds a series style to the array of line series styles contained within the theme.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addLineSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddLineSeriesStyle</b> (<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean)">AddOHLCSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of ohlc series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addOHLCSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddOHLCSeriesStyle</b> (<a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean)">AddScatterSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean):member">
+          <div class="msummary">Stores the series style in the array of scatter series styles.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("addScatterSeriesStyle:asSelected:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>AddScatterSeriesStyle</b> (<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a> newStyle, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>newStyle</i>
+              </dt>
+              <dd>The series style to add to the theme.</dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>If this is set to true, the style will be used for series when they are selected.</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean):Remarks">
+				The theme contains two sets of series styles - one for series in their normal state, and one for when they are selected.
+				When you add a series style to the theme, you can specify when it should be used on a series using the selected parameter.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BarLineWidth">BarLineWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BarLineWidth:member">
+          <div class="msummary">Use this setting to apply a consistent line Width across all bar series
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("barLineWidth", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBarLineWidth:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>BarLineWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BarLineWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BarLineWidth:Remarks">
+				After setting this value call ShinobiChart.ApplyTheme on your chart.
+				This value will be used by default.
+				If you have explicitly set the bar width on a line series, that value will take precedence over the default.
+				By default, this property is set to <tt>1</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BarLineWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BlackColor">BlackColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BlackColor:member">
+          <div class="msummary">Black palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("blackColor", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBlackColor:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>BlackColor</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BlackColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlackColor:Remarks">
+				This is used for:
+				<ul><li>The color of the box displayed during box gestures.</li><li>The text color on the chart title and the axis titles.</li><li>The color of the legend text and border.</li><li>The color of axis tick marks and labels.</li><li>The outline drawn for candlestick chart series.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlackColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BlackColorLowAlpha">BlackColorLowAlpha Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BlackColorLowAlpha:member">
+          <div class="msummary">Black palette color with reduced alpha.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("blackColorLowAlpha", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBlackColorLowAlpha:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>BlackColorLowAlpha</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BlackColorLowAlpha:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlackColorLowAlpha:Remarks">
+				This is used for tracking lines on box gestures, and for the major grid lines on the chart.
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlackColorLowAlpha:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BlueColorDark">BlueColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BlueColorDark:member">
+          <div class="msummary">Blue palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("blueColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBlueColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>BlueColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill color underneath the third line series on the chart.</li><li>The color of the third bar/column series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BlueColorLight">BlueColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BlueColorLight:member">
+          <div class="msummary">Blue palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("blueColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBlueColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>BlueColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorLight:Remarks">
+				This is used for:
+				<ul><li>The color of the third line series on the chart.</li><li>The color of the lower limiting line in the second band series on the chart.</li><li>The color of the third bar/column series on the chart.</li><li>The color of points in the third scatter series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BlueColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BoldFontName">BoldFontName Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BoldFontName:member">
+          <div class="msummary">The name of the bold font to use within the theme.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("boldFontName", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBoldFontName:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>BoldFontName</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BoldFontName:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BoldFontName:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BoldFontName:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.BoxGestureStyle">BoxGestureStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.BoxGestureStyle:member">
+          <div class="msummary">Style options relating to the box gesture.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("boxGestureStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setBoxGestureStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartBoxGestureStyle.html">SChartBoxGestureStyle</a> <b>BoxGestureStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.BoxGestureStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BoxGestureStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color of the box which is displayed.</li><li>The color of tracking lines.</li><li>The width of the lines on the box.</li><li>The width of the tracking lines.</li></ul>
+				See <a href="../ShinobiCharts/SChartBoxGestureStyle.html">ShinobiCharts.SChartBoxGestureStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.BoxGestureStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.ChartStyle">ChartStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.ChartStyle:member">
+          <div class="msummary">Style options relating to the overall chart for cartesian charts.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("chartStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setChartStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a> <b>ChartStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.ChartStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ChartStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The background color of the chart.</li><li>The border of the chart.</li></ul>
+				See <a href="../ShinobiCharts/SChartStyle.html">ShinobiCharts.SChartStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ChartStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.ChartTitleStyle">ChartTitleStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.ChartTitleStyle:member">
+          <div class="msummary">Style options relating to the chart title.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("chartTitleStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setChartTitleStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartMainTitleStyle.html">SChartMainTitleStyle</a> <b>ChartTitleStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.ChartTitleStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ChartTitleStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color, font and alignment of the title.</li><li>Whether the title overlaps with the chart.</li></ul>
+				See <a href="../ShinobiCharts/SChartMainTitleStyle.html">ShinobiCharts.SChartMainTitleStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ChartTitleStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.ClassHandle:member">
+          <div class="msummary">
+        The handle for this class.
+        </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.ColumnLineWidth">ColumnLineWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.ColumnLineWidth:member">
+          <div class="msummary">Use this setting to apply a consistent line Width across all column series
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("columnLineWidth", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setColumnLineWidth:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>ColumnLineWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.ColumnLineWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ColumnLineWidth:Remarks">
+				After setting this value call ShinobiChart.ApplyTheme on your chart.
+				This value will be used by default.
+				If you have explicitly set the column line width on a line series, that value will take precedence over the default.
+				By default, this property is set to <tt>1</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.ColumnLineWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle)">ConfigureBarSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle):member">
+          <div class="msummary">DEPRECATED - We will move this off the public API in a future commit.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("configureBarSeriesStyle:")]<br />[System.Obsolete("", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ConfigureBarSeriesStyle</b> (<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle)">ConfigureColumnSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle):member">
+          <div class="msummary">DEPRECATED - We will move this off the public API in a future commit.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("configureColumnSeriesStyle:")]<br />[System.Obsolete("", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ConfigureColumnSeriesStyle</b> (<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle)">ConfigureLineSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle):member">
+          <div class="msummary">DEPRECATED - We will move this off the public API in a future commit.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("configureLineSeriesStyle:")]<br />[System.Obsolete("", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ConfigureLineSeriesStyle</b> (<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle)">ConfigureScatterSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle):member">
+          <div class="msummary">DEPRECATED - We will move this off the public API in a future commit.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("configureScatterSeriesStyle:")]<br />[System.Obsolete("", false)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>ConfigureScatterSeriesStyle</b> (<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a> style)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle):Parameters">
+            <dl>
+              <dt>
+                <i>style</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone)">Copy Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("copyWithZone:")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a> <b>Copy</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a> zone)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone):Parameters">
+            <dl>
+              <dt>
+                <i>zone</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.CrosshairStyle">CrosshairStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.CrosshairStyle:member">
+          <div class="msummary">Style options relating to the chart crosshair.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("crosshairStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setCrosshairStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a> <b>CrosshairStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.CrosshairStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.CrosshairStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color and width of crosshair lines.</li><li>The color and font of the crosshair tooltip.</li><li>The width and color of the crosshair tooltip border.</li></ul>
+				See <a href="../ShinobiCharts/SChartCrosshairStyle.html">ShinobiCharts.SChartCrosshairStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.CrosshairStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.DonutCrustThickness">DonutCrustThickness Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.DonutCrustThickness:member">
+          <div class="msummary">Use this setting to apply a consistent crust thickness across all donut series
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("donutCrustThickness", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setDonutCrustThickness:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>DonutCrustThickness</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.DonutCrustThickness:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.DonutCrustThickness:Remarks">
+				After setting this value call ShinobiChart.ApplyTheme on your chart.
+				This value will be used by default.
+				If you have explicitly set the donut crust thickness on a line series, that value will take precedence over the default.
+				By default, this property is set to <tt>5</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.DonutCrustThickness:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean)">GetBandSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("bandSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a> <b>GetBandSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean)">GetBarSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("barSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a> <b>GetBarSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean)">GetBubbleSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("bubbleSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartBubbleSeriesStyle.html">SChartBubbleSeriesStyle</a> <b>GetBubbleSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean)">GetCandlestickSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("candlestickSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a> <b>GetCandlestickSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean)">GetColumnSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("columnSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a> <b>GetColumnSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean)">GetDonutSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("donutSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a> <b>GetDonutSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean)">GetLineSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("lineSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a> <b>GetLineSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean)">GetOHLCSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("ohlcSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a> <b>GetOHLCSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean)">GetRadialLineSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("radialLineSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartRadialLineSeriesStyle.html">SChartRadialLineSeriesStyle</a> <b>GetRadialLineSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean)">GetScatterSeriesStyle Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean):member">
+          <div class="msummary">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("scatterSeriesStyleForSeriesAtIndex:selected:")]<br />public virtual <a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a> <b>GetScatterSeriesStyle</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> seriesIndex, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> selected)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>seriesIndex</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+              <dt>
+                <i>selected</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.GreenColorBrightLight">GreenColorBrightLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.GreenColorBrightLight:member">
+          <div class="msummary">Green palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("greenColorBrightLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setGreenColorBrightLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>GreenColorBrightLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorBrightLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorBrightLight:Remarks">
+				This is used for the color of rising data points in the first candlestick series on the chart.
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorBrightLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.GreenColorDark">GreenColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.GreenColorDark:member">
+          <div class="msummary">Green palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("greenColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setGreenColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>GreenColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill color underneath the second line series on the chart.</li><li>The color of the second bar/column series on the chart.</li><li>The color of rising data points in the first OHLC series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.GreenColorLight">GreenColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.GreenColorLight:member">
+          <div class="msummary">Green palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("greenColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setGreenColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>GreenColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorLight:Remarks">
+				This is used for:
+				<ul><li>The line color of the second line series on the chart.</li><li>The color of the upper limiting line in the first band series on the chart.</li><li>The color of points in the first band series on the chart.</li><li>The color of the second bar/column series on the chart.</li><li>The color of points in the second scatter series on the chart.</li><li>The color of rising data points in the first OHLC series on the chart.</li><li>The color of rising data points in the first candlestick series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.GreenColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.LegendStyle">LegendStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.LegendStyle:member">
+          <div class="msummary">Style options relating to the chart legend.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("legendStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setLegendStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a> <b>LegendStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.LegendStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LegendStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color and font of text in the legend.</li><li>The alignment of symbols in the legend.</li><li>The color of the legend border.</li><li>The corner radius of the legend.</li><li>The background color of the legend.</li><li>The padding around the legend.</li></ul>
+				See <a href="../ShinobiCharts/SChartLegendStyle.html">ShinobiCharts.SChartLegendStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LegendStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.LightFontName">LightFontName Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.LightFontName:member">
+          <div class="msummary">The name of the light font to use within the theme.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("lightFontName", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setLightFontName:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>LightFontName</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.LightFontName:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LightFontName:Remarks">This is used for labels on major axis ticks.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LightFontName:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.LineWidth">LineWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.LineWidth:member">
+          <div class="msummary">Use this setting to apply a consistent line width across all line series.
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("lineWidth", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setLineWidth:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>LineWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.LineWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LineWidth:Remarks">
+				After setting this value call ShinobiChart.ApplyTheme on your chart.
+				This value will be used by default.
+				If you have explicitly set the line width on a line series, that value will take precedence over the default.
+				By default, this property is set to <tt>1</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.LineWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.OrangeColorDark">OrangeColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.OrangeColorDark:member">
+          <div class="msummary">Orange palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("orangeColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setOrangeColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>OrangeColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill color underneath the fourth line series on the chart.</li><li>The color of the fourth bar/column series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.OrangeColorLight">OrangeColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.OrangeColorLight:member">
+          <div class="msummary">Orange palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("orangeColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setOrangeColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>OrangeColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorLight:Remarks">
+				This is used for:
+				<ul><li>The color of the fourth line series on the chart.</li><li>The color of the upper limiting line in the second band series on the chart.</li><li>The color of points in the second band series on the chart.</li><li>The color of the fourth bar/column series on the chart.</li><li>The color of the fourth scatter series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.OrangeColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.PieCrustThickness">PieCrustThickness Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.PieCrustThickness:member">
+          <div class="msummary">Use this setting to apply a consistent crust thickness across all pie series
+			</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("pieCrustThickness", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setPieCrustThickness:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>PieCrustThickness</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.PieCrustThickness:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PieCrustThickness:Remarks">
+				After setting this value call ShinobiChart.ApplyTheme on your chart.
+				This value will be used by default.
+				If you have explicitly set the pie crust thickness on a line series, that value will take precedence over the default.
+				By default, this property is set to <tt>1</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PieCrustThickness:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.PurpleColorDark">PurpleColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.PurpleColorDark:member">
+          <div class="msummary">Purple palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("purpleColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setPurpleColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>PurpleColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill color below the fifth line series on the chart.</li><li>The color of the fifth bar/column series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.PurpleColorLight">PurpleColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.PurpleColorLight:member">
+          <div class="msummary">Purple palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("purpleColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setPurpleColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>PurpleColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorLight:Remarks">
+				This is used for:
+				<ul><li>The color of the fifth line series on the chart.</li><li>The color of the lower limiting line on the third band series on the chart.</li><li>The color of the fifth bar/column series on the chart.</li><li>The color of the fifth scatter series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.PurpleColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.RadialChartStyle">RadialChartStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.RadialChartStyle:member">
+          <div class="msummary">Style options relating to the overall chart for radial charts.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("radialChartStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRadialChartStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a> <b>RadialChartStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.RadialChartStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RadialChartStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The background color of the chart.</li><li>The border of the chart.</li></ul>
+				See <a href="../ShinobiCharts/SChartStyle.html">ShinobiCharts.SChartStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RadialChartStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.RedColorBrightLight">RedColorBrightLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.RedColorBrightLight:member">
+          <div class="msummary">Red palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("redColorBrightLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRedColorBrightLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>RedColorBrightLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.RedColorBrightLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorBrightLight:Remarks">
+				This is used for:
+				<ul><li>The color of falling data points in the first OHLC series on the chart.</li><li>The color of falling data points in the first candlestick series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorBrightLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.RedColorDark">RedColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.RedColorDark:member">
+          <div class="msummary">Red palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("redColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRedColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>RedColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.RedColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorDark:Remarks">
+				This is used for:
+				<ul><li>Area fill underneath the first line series on the chart.</li><li>The color of the first bar/column series on the chart.</li><li>The color of falling data points in the first candlestick series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.RedColorLight">RedColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.RedColorLight:member">
+          <div class="msummary">Red palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("redColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRedColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>RedColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.RedColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorLight:Remarks">
+				This is used for:
+				<ul><li>The line color of the first line series on the chart.</li><li>The color of the lower limiting line of the first band series on the chart.</li><li>The color of the first bar/column series on the chart.</li><li>The color of points in the first scatter series on the chart.</li><li>The color of falling data points in the first OHLC series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RedColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.RegularFontName">RegularFontName Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.RegularFontName:member">
+          <div class="msummary">The name of the regular font to use within the theme.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("regularFontName", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setRegularFontName:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>RegularFontName</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.RegularFontName:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RegularFontName:Remarks">
+				This is used for:
+				<ul><li>The chart title.</li><li>The axis titles.</li><li>Text in the legend.</li><li>Text in the crosshair tooltip.</li><li>Labels in the first donut series on the chart.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.RegularFontName:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.XAxisRadialStyle">XAxisRadialStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.XAxisRadialStyle:member">
+          <div class="msummary">Style options relating to the radial axis (x-axis) of any radial charts.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("xAxisRadialStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setXAxisRadialStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a> <b>XAxisRadialStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.XAxisRadialStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.XAxisRadialStyle:Remarks">
+				 This includes properties such as:
+				<ul><li>The color and font of the axis title.</li><li>The position of the axis title.</li><li>The width and color of the axis.</li><li>The width and color of tick marks on the axis.</li><li>Whether tick marks are shown.</li><li>The color of grid lines on the chart for the x axis.</li><li>Whether grid lines are shown.</li></ul>
+				See <a href="../ShinobiCharts/SChartAxisStyle.html">ShinobiCharts.SChartAxisStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.XAxisRadialStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.XAxisStyle">XAxisStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.XAxisStyle:member">
+          <div class="msummary">Style options relating to the x axis.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("xAxisStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setXAxisStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a> <b>XAxisStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.XAxisStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.XAxisStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color and font of the axis title.</li><li>The position of the axis title.</li><li>The width and color of the axis.</li><li>The width and color of tick marks on the axis.</li><li>Whether tick marks are shown.</li><li>The color of grid lines on the chart for the x axis.</li><li>Whether grid lines are shown.</li></ul>
+				See <a href="../ShinobiCharts/SChartAxisStyle.html">ShinobiCharts.SChartAxisStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.XAxisStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.YAxisRadialStyle">YAxisRadialStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.YAxisRadialStyle:member">
+          <div class="msummary">Style options relating to the polar axis (y-axis) of any radial charts.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yAxisRadialStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYAxisRadialStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a> <b>YAxisRadialStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.YAxisRadialStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YAxisRadialStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color and font of the axis title.</li><li>The position of the axis title.</li><li>The width and color of the axis.</li><li>The width and color of tick marks on the axis.</li><li>Whether tick marks are shown.</li><li>The color of grid lines on the chart for the y axis.</li><li>Whether grid lines are shown.</li></ul>
+				See <a href="../ShinobiCharts/SChartAxisStyle.html">ShinobiCharts.SChartAxisStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YAxisRadialStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.YAxisStyle">YAxisStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.YAxisStyle:member">
+          <div class="msummary">Style options relating to the y axis.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yAxisStyle", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYAxisStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a> <b>YAxisStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.YAxisStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YAxisStyle:Remarks">
+				This includes properties such as:
+				<ul><li>The color and font of the axis title.</li><li>The position of the axis title.</li><li>The width and color of the axis.</li><li>The width and color of tick marks on the axis.</li><li>Whether tick marks are shown.</li><li>The color of grid lines on the chart for the y axis.</li><li>Whether grid lines are shown.</li></ul>
+				See <a href="../ShinobiCharts/SChartAxisStyle.html">ShinobiCharts.SChartAxisStyle</a>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YAxisStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.YellowColorDark">YellowColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.YellowColorDark:member">
+          <div class="msummary">Yellow palette color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yellowColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYellowColorDark:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>YellowColorDark</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill color below the sixth line series on the chart.</li><li>The color of the sixth bar/column series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartTheme.YellowColorLight">YellowColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartTheme.YellowColorLight:member">
+          <div class="msummary">Yellow palette color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("yellowColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setYellowColorLight:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>YellowColorLight</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorLight:Remarks">
+				This is used for:
+				<ul><li>The color of the sixth line series on the chart.</li><li>The color of the upper limiting line on the third band series on the chart.</li><li>The color of points in the third band series on the chart.</li><li>The color of the sixth bar/column series on the chart.</li><li>The color of the sixth scatter series on the chart.</li></ul>
+				The theme color properties are included to allow you to access the colors used within the theme, and use them elsewhere in your app.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartTheme.YellowColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

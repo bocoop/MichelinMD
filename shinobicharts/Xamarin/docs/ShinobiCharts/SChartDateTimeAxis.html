@@ -1,0 +1,1590 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartDateTimeAxis</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartDateTimeAxis">SChartDateTimeAxis  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartDateTimeAxis:Summary">An axis that works with date/time values </p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartDateTimeAxis:Signature">[Foundation.Register("SChartDateTimeAxis", true)]<br />public class  <b>SChartDateTimeAxis</b> : <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartDateTimeAxis:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDateTimeAxis:Docs:Remarks">
+        <p>
+          <p>
+            <img src="../images/api_datetimeaxis.png" class="picture" />
+          </p>
+        </p>
+        <p>
+					The frequency values for tick marks are expected to be <a href="../ShinobiCharts/SChartDateFrequency.html">ShinobiCharts.SChartDateFrequency</a> objects.
+				</p>
+        <p>
+					Warning: This axis is not currently supported on radial charts.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartDateTimeAxis:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateTimeAxis()">SChartDateTimeAxis</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange)">SChartDateTimeAxis</a>
+                    </b>(<a href="../ShinobiCharts/SChartDateRange.html">SChartDateRange</a>)</div>
+                </td>
+                <td> Initialize with an NSDate specific range.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag)">SChartDateTimeAxis</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr)">SChartDateTimeAxis</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AllowPanningOutOfDefaultRange">AllowPanningOutOfDefaultRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether or not the user is permitted to pan outside of the user-set default range. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AllowPanningOutOfMaxRange">AllowPanningOutOfMaxRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Whether or not the user is permitted to pan outside of the union of the data range and the default range  (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AnchorPoint">AnchorPoint</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. The start point for the calculation of tick marks. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AnimationEdgeBouncing">AnimationEdgeBouncing</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether or not the axis allows the range to temporarily go past the limit specified before bouncing back in. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AnimationEnabled">AnimationEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether or not the axis animates when zooming programmatically, or via double-tap on box gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisFrame">AxisFrame</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGRect</a>
+                  </i>. The frame bounding the area where the axis is drawn. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisLabelsAreFixed">AxisLabelsAreFixed</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Defines whether axis labels fixed in place.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisOrientation">AxisOrientation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartOrientation.html">SChartOrientation</a>
+                  </i>. The Orientation of the axis. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisPosition">AxisPosition</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisPosition.html">SChartAxisPosition</a>
+                  </i>.  Defines whether the axis will be Positioned at the normal or reverse location. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisPositionValue">AxisPositionValue</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. 
+				The value at which an axis intersects with the opposite axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisRange">AxisRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartRange.html">SChartRange</a>
+                  </i>. The current displayed  range of the axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.BarColMax">BarColMax</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The maximum value of a bar or column across all of the bar/column series for this axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.BarColMin">BarColMin</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The minimum value of a bar or column across all of the bar/column series for this axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.BarColSpacing">BarColSpacing</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>. The smallest change in value between any adjacent bars or columns. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.CalculateMajorTickFrequencyFromDiscontinuousRange">CalculateMajorTickFrequencyFromDiscontinuousRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. 
+				This property controls how the auto-tick-frequency calculations are done.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.Chart">Chart</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>
+                  </i>.  A reference to the parent chart
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartDateTimeAxis.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.CurrentMajorTickFrequency">CurrentMajorTickFrequency</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. The current major tick frequency in use by this axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.CurrentMinorTickFrequency">CurrentMinorTickFrequency</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. The current minor tick frequency in use by this axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.DataRange">DataRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartRange.html">SChartRange</a>
+                  </i>.  A readonly property indicating the total data range across all series represented by this axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.DefaultRange">DefaultRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartRange.html">SChartRange</a>
+                  </i>. This is the range that will be displayed after the chart initially loads - and if the Zoom is reset. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.DiscontinuousTickLabelClipping">DiscontinuousTickLabelClipping</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDiscontinuousTickLabelClipping.html">SChartDiscontinuousTickLabelClipping</a>
+                  </i>. 
+				This property comes into effect for discontinuous axes over a discontinuity.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.EnableGesturePanning">EnableGesturePanning</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Set to true to allow swipe gestures to pan the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.EnableGestureZooming">EnableGestureZooming</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Set to true to allow pinch gestures to Zoom the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.EnableMomentumPanning">EnableMomentumPanning</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Enables momentum panning. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.EnableMomentumZooming">EnableMomentumZooming</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Enables momentum zooming.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.IsMomentumPanning">IsMomentumPanning</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Will always be true when the axis is decelerating from a pan swipe gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.IsMomentumZooming">IsMomentumZooming</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Will always be <tt>true</tt> when the axis is decelerating from a pinch zoom gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.LabelFormatString">LabelFormatString</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSString</a>
+                  </i>. A string to format each tick mark label - actual format is dependent on axis type. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.LabelFormatter">LabelFormatter</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartTickLabelFormatter.html">SChartTickLabelFormatter</a>
+                  </i>. A label formatter for tick mark labels.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.MajorTickFrequency">MajorTickFrequency</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. An appropriate object representing the major tick mark frequency
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.MinimumFreeAxisSpace">MinimumFreeAxisSpace</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>.  (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.MinorTickFrequency">MinorTickFrequency</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>.  An appropriate object representing the minor tick mark frequency
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.PanMomentumDelay">PanMomentumDelay</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>. The time steps of each deceleration after a pan swipe gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.PanMomentumFactor">PanMomentumFactor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>. The factor by which the velocity of the gesture will decay during one deceleration time period. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.RangePaddingHigh">RangePaddingHigh</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. In data terms, the amount by which the upper limit of the axis range will be raised past the range of the data. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.RangePaddingLow">RangePaddingLow</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>
+                  </i>. In data terms, the amount by which the lower limit of the axis range will be lowered past the range of the data. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.SecondaryAxisOffset">SecondaryAxisOffset</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>. The offset to the axis object from the edge of the canvas, in points. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. The SChartAxisStyle object that manages the appearance of the axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.TickLabelClippingModeHigh">TickLabelClippingModeHigh</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartTickLabelClippingMode.html">SChartTickLabelClippingMode</a>
+                  </i>. This property allows you to alter the tick label clipping mode for the upper end of an axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.TickLabelClippingModeLow">TickLabelClippingModeLow</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartTickLabelClippingMode.html">SChartTickLabelClippingMode</a>
+                  </i>. This property allows you to alter the tick label clipping mode for the lower end of an axis. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.TickLabelRefreshRate">TickLabelRefreshRate</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/ISChartTickLabelRefreshRate.html">ISChartTickLabelRefreshRate</a>
+                  </i>. Provides the ability to customize the rate at which the tick labels are refreshed.  (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.Title">Title</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The text to display in the axis title. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.TitleLabel">TitleLabel</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartTitle.html">SChartTitle</a>
+                  </i>. The title for the axis. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.VisibleRange">VisibleRange</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartRange.html">SChartRange</a>
+                  </i>.  A range within which all the visible (non-hidden) series on this axis will be displayed. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.Width">Width</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>.  Specifies a fixed Width for the axis area that won't change. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.ZoomMomentumDelay">ZoomMomentumDelay</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>. The time steps of each deceleration after a pinch zoom gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.ZoomMomentumFactor">ZoomMomentumFactor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>
+                  </i>.  The factor by which the velocity of the gesture will decay during one deceleration time period. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ConfigureBars(System.Double,Foundation.NSNumber,Foundation.NSNumber)">ConfigureBars</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>)<blockquote>Provide bounds and spacing data for bar series within the chart to improve performance.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ConfigureColumns(System.Double,Foundation.NSNumber,Foundation.NSNumber)">ConfigureColumns</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>)<blockquote>Provide bounds and spacing data for column series within the chart to improve performance.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.DataValueForPixelValue(System.nfloat)">DataValueForPixelValue</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents)">GetFormatString</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSDateComponents</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>Returns a format string for the current frequency.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.GetNewRange(Foundation.NSNumber,Foundation.NSNumber)">GetNewRange</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>)<nobr> : <a href="../ShinobiCharts/SChartRange.html">SChartRange</a></nobr><blockquote> Creates a new range object with the given maximum and minimum. 
+ 				The subclass of <a href="../ShinobiCharts/SChartRange.html">ShinobiCharts.SChartRange</a> that is returned will correspond to the axis type. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.IsXAxis()">IsXAxis</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Whether or not its `axisOrientation` is horizontal (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.OffsetForSeries(ShinobiCharts.SChartMappedSeries)">OffsetForSeries</a>
+                  </b>(<a href="../ShinobiCharts/SChartMappedSeries.html">SChartMappedSeries</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote>
+				Returns the difference in data terms between where data in a series is drawn to it's value on this axis.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.PanByValue(System.Double)">PanByValue</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Pan the axis range by an explicit amount. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.PanByValue(System.Double,System.Boolean)">PanByValue</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Pan the axis range by an explicit amount. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.PanByValue(System.Double,System.Boolean,System.Boolean)">PanByValue</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Pan the axis range by an explicit amount. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.PanByValue(System.Double,System.Boolean,System.Boolean,System.Boolean)">PanByValue</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Pan the axis range by an explicit amount. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.PixelValueForDataValue(Foundation.NSObject)">PixelValueForDataValue</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a></nobr><blockquote>Returns the pixel value, in the coordinate system of the plot area, of the given data value along this axis. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ResetZoomLevel()">ResetZoomLevel</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Sets the axis back to its original zoom (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ResetZoomLevel(System.Boolean)">ResetZoomLevel</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Sets the axis back to its original zoom. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetRange(Foundation.NSObject,Foundation.NSObject)">SetRange</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Attempts to set the current visible range <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisRange">SChartAxis.AxisRange</a> to a range with the given minimum and maximum values.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetRange(Foundation.NSObject,Foundation.NSObject,System.Boolean)">SetRange</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>
+				Attempts to set the current visible range <a href="../ShinobiCharts/SChartAxis.html#P:ShinobiCharts.SChartAxis.AxisRange">SChartAxis.AxisRange</a> to a range with the given minimum and maximum values.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoom(System.Double)">SetZoom</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Sets the zoom of the axis, based around a fixed point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoom(System.Double,System.Boolean)">SetZoom</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote> Sets the zoom of the axis, based around a fixed point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoom(System.Double,System.Double@)">SetZoom</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <i>ref</i> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote> Sets the zoom of the axis, based around a fixed point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoom(System.Double,System.Double@,System.Boolean)">SetZoom</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <i>ref</i> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote> Sets the zoom of the axis, based around a fixed point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoom(System.Double,System.Double@,System.Boolean,System.Boolean)">SetZoom</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <i>ref</i> <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Sets the zoom of the axis, based around a fixed point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.SetZoomLevel(ShinobiCharts.SChartAxisZoomLevel)">SetZoomLevel</a>
+                  </b>(<a href="../ShinobiCharts/SChartAxisZoomLevel.html">SChartAxisZoomLevel</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>Sets the zoom to a standard level. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.StringForId(Foundation.NSObject)">StringForId</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>Returns a string representation of the given object. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.Zoom()">Zoom</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a></nobr><blockquote>Returns the current zoom level, relative to the DefaultRange of the axis.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ZoomToPoint(System.Double,System.Double)">ZoomToPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>)<blockquote>Zoom to a set range, centred on a point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.ZoomToPoint(System.Double,System.Double,System.Boolean,System.Boolean)">ZoomToPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Zoom to a set range, centred on a point. (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.AlterTickMark(ShinobiCharts.SChartTickMark)">AlterTickMark</a>
+                  </b>(<a href="../ShinobiCharts/SChartTickMark.html">SChartTickMark</a>)<blockquote>Override this if you want to customize a tickmark before it is added to its axis (optional, and can also be done in <a href="../ShinobiCharts/SChartDelegate.html#M:ShinobiCharts.SChartDelegate.OnAddingTickMark(ShinobiCharts.ShinobiChart,ShinobiCharts.SChartTickMark,ShinobiCharts.SChartAxis)">SChartDelegate.OnAddingTickMark(ShinobiChart, SChartTickMark, SChartAxis)</a>).
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartAxis.html#M:ShinobiCharts.SChartAxis.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Releases unmanaged resources.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartDateTimeAxis:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartDateTimeAxis()">SChartDateTimeAxis Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateTimeAxis():member">
+          <div class="msummary">Default constructor</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartDateTimeAxis</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag)">SChartDateTimeAxis Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartDateTimeAxis</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange)">SChartDateTimeAxis Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange):member">
+          <div class="msummary"> Initialize with an NSDate specific range.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithRange:")]<br />public  <b>SChartDateTimeAxis</b> (<a href="../ShinobiCharts/SChartDateRange.html">SChartDateRange</a> range)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange):Parameters">
+            <dl>
+              <dt>
+                <i>range</i>
+              </dt>
+              <dd>
+              </dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(ShinobiCharts.SChartDateRange):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr)">SChartDateTimeAxis Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartDateTimeAxis</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartDateTimeAxis(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartDateTimeAxis.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartDateTimeAxis.ClassHandle:member">
+          <div class="msummary">The handle for this class.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartDateTimeAxis.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateTimeAxis.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartDateTimeAxis.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents)">GetFormatString Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents):member">
+          <div class="msummary">Returns a format string for the current frequency.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("formatStringForFrequency:")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>GetFormatString</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSDateComponents</a> frequency)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents):Parameters">
+            <dl>
+              <dt>
+                <i>frequency</i>
+              </dt>
+              <dd>
+                <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+              </dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents):Remarks">
+					For example, to show seconds when the chart has calculated a high tick
+					frequency for the current zoom level:
+					<table class="CodeExampleTable"><tr><td><b><font size="-1"> Example</font></b></td></tr><tr><td><pre class="">if(frequency.Hour &lt; 12)
+	return @"HH:mm:ss";
+else
+	return @"HH:mm";</pre></td></tr></table>
+					This is called just prior to automatic tick label generation and allows you to
+					override the default date label-format as required.
+				</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartDateTimeAxis.GetFormatString(Foundation.NSDateComponents):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

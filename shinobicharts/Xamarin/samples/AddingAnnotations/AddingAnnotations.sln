@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E43CA5B4-AE58-452D-BEF3-C2D7F334652F}") = "AddingAnnotations", "AddingAnnotations.csproj", "{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|iPhone.Build.0 = Debug|iPhone
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|iPhone.ActiveCfg = Release|iPhone
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|iPhone.Build.0 = Release|iPhone
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{2CC2A57D-C521-45FE-8CA6-2A66C0E85509}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AddingAnnotations.csproj
+	EndGlobalSection
+EndGlobal

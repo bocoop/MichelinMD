@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2714AB6419F953D1008EA593 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714AB6319F953D1008EA593 /* AppDelegate.swift */; };
+		2714AB6619F953D1008EA593 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2714AB6519F953D1008EA593 /* ViewController.swift */; };
+		2714AB6919F953D1008EA593 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2714AB6719F953D1008EA593 /* Main.storyboard */; };
+		2714ABC419F95CC3008EA593 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABC319F95CC3008EA593 /* Security.framework */; };
+		2714ABC619F95CCB008EA593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABC519F95CCB008EA593 /* CoreGraphics.framework */; };
+		2714ABC819F95CD0008EA593 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABC719F95CD0008EA593 /* QuartzCore.framework */; };
+		2714ABCA19F95CD9008EA593 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABC919F95CD9008EA593 /* OpenGLES.framework */; };
+		2714ABCC19F95CE7008EA593 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABCB19F95CE7008EA593 /* libc++.dylib */; };
+		2714ABCE19F95CF8008EA593 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2714ABCD19F95CF8008EA593 /* ShinobiCharts.framework */; };
+		9BAB8EF01AB08D1900407324 /* Launch-Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B9811471AAF3433009F8B1A /* Launch-Screen.xib */; };
+		9BAB8EF11AB08D1C00407324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B3763FD1AAA198200A297CF /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2714AB5E19F953D1008EA593 /* PolarChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2714AB6219F953D1008EA593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2714AB6319F953D1008EA593 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2714AB6519F953D1008EA593 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2714AB6819F953D1008EA593 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2714ABC319F95CC3008EA593 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2714ABC519F95CCB008EA593 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2714ABC719F95CD0008EA593 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2714ABC919F95CD9008EA593 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2714ABCB19F95CE7008EA593 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		2714ABCD19F95CF8008EA593 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = ../../../ShinobiCharts.framework; sourceTree = "<group>"; };
+		9B3763FD1AAA198200A297CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../Assets/Images.xcassets; sourceTree = "<group>"; };
+		9B9811471AAF3433009F8B1A /* Launch-Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch-Screen.xib"; path = "../../../Assets/Launch-Screen.xib"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2714AB5B19F953D1008EA593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2714ABCC19F95CE7008EA593 /* libc++.dylib in Frameworks */,
+				2714ABCA19F95CD9008EA593 /* OpenGLES.framework in Frameworks */,
+				2714ABC819F95CD0008EA593 /* QuartzCore.framework in Frameworks */,
+				2714ABC619F95CCB008EA593 /* CoreGraphics.framework in Frameworks */,
+				2714ABCE19F95CF8008EA593 /* ShinobiCharts.framework in Frameworks */,
+				2714ABC419F95CC3008EA593 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2714AB5519F953D1008EA593 = {
+			isa = PBXGroup;
+			children = (
+				2714AB6019F953D1008EA593 /* PolarChart */,
+				2714ABC219F95CB5008EA593 /* Frameworks */,
+				2714AB5F19F953D1008EA593 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2714AB5F19F953D1008EA593 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2714AB5E19F953D1008EA593 /* PolarChart.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2714AB6019F953D1008EA593 /* PolarChart */ = {
+			isa = PBXGroup;
+			children = (
+				2714AB6319F953D1008EA593 /* AppDelegate.swift */,
+				2714AB6519F953D1008EA593 /* ViewController.swift */,
+				2714AB6719F953D1008EA593 /* Main.storyboard */,
+				2714AB6119F953D1008EA593 /* Supporting Files */,
+				9B3763FD1AAA198200A297CF /* Images.xcassets */,
+				9B9811471AAF3433009F8B1A /* Launch-Screen.xib */,
+			);
+			path = PolarChart;
+			sourceTree = "<group>";
+		};
+		2714AB6119F953D1008EA593 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2714AB6219F953D1008EA593 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2714ABC219F95CB5008EA593 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2714ABCD19F95CF8008EA593 /* ShinobiCharts.framework */,
+				2714ABCB19F95CE7008EA593 /* libc++.dylib */,
+				2714ABC919F95CD9008EA593 /* OpenGLES.framework */,
+				2714ABC719F95CD0008EA593 /* QuartzCore.framework */,
+				2714ABC519F95CCB008EA593 /* CoreGraphics.framework */,
+				2714ABC319F95CC3008EA593 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2714AB5D19F953D1008EA593 /* PolarChart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2714AB7D19F953D1008EA593 /* Build configuration list for PBXNativeTarget "PolarChart" */;
+			buildPhases = (
+				2714AB5A19F953D1008EA593 /* Sources */,
+				2714AB5B19F953D1008EA593 /* Frameworks */,
+				2714AB5C19F953D1008EA593 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PolarChart;
+			productName = PolarChartSwift;
+			productReference = 2714AB5E19F953D1008EA593 /* PolarChart.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2714AB5619F953D1008EA593 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Scott Logic";
+				TargetAttributes = {
+					2714AB5D19F953D1008EA593 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 2714AB5919F953D1008EA593 /* Build configuration list for PBXProject "PolarChart" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2714AB5519F953D1008EA593;
+			productRefGroup = 2714AB5F19F953D1008EA593 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2714AB5D19F953D1008EA593 /* PolarChart */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2714AB5C19F953D1008EA593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BAB8EF11AB08D1C00407324 /* Images.xcassets in Resources */,
+				9BAB8EF01AB08D1900407324 /* Launch-Screen.xib in Resources */,
+				2714AB6919F953D1008EA593 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2714AB5A19F953D1008EA593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2714AB6619F953D1008EA593 /* ViewController.swift in Sources */,
+				2714AB6419F953D1008EA593 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2714AB6719F953D1008EA593 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2714AB6819F953D1008EA593 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2714AB7B19F953D1008EA593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../../../ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2714AB7C19F953D1008EA593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/../../../ShinobiCharts.framework/Headers/ShinobiChart-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2714AB7E19F953D1008EA593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = PolarChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = PolarChart;
+			};
+			name = Debug;
+		};
+		2714AB7F19F953D1008EA593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = PolarChart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = PolarChart;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2714AB5919F953D1008EA593 /* Build configuration list for PBXProject "PolarChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2714AB7B19F953D1008EA593 /* Debug */,
+				2714AB7C19F953D1008EA593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2714AB7D19F953D1008EA593 /* Build configuration list for PBXNativeTarget "PolarChart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2714AB7E19F953D1008EA593 /* Debug */,
+				2714AB7F19F953D1008EA593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2714AB5619F953D1008EA593 /* Project object */;
+}

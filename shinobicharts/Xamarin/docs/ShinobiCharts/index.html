@@ -1,0 +1,1619 @@
+<html>
+  <head>
+    <title>ShinobiCharts: ShinobiCharts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a>
+    </div>
+    <h1 class="PageTitle">ShinobiCharts Namespace</h1>
+    <p class="Summary">
+    </p>
+    <div>
+    </div>
+    <div class="Remarks">
+      <h2 class="Section"> Namespace</h2>
+      <p>
+        <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+      </p>
+      <table class="TypesListing" style="margin-top: 1em">
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./GLColour4f.html">GLColour4f</a>
+          </td>
+          <td>A colour structure containing red, blue, green and alpha values.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./IISChartCrosshair.html">IISChartCrosshair</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartActivityIndicator.html">ISChartActivityIndicator</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartActivityIndicator.html">ShinobiCharts.SChartActivityIndicator</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartAnimationCurveProtocol.html">ISChartAnimationCurveProtocol</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartAnimationCurveProtocol.html">ShinobiCharts.SChartAnimationCurveProtocol</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartCrosshair.html">ISChartCrosshair</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartCrosshair_Extensions.html">ISChartCrosshair_Extensions</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartData.html">ISChartData</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartData.html">ShinobiCharts.SChartData</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartDataSource.html">ISChartDataSource</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartDataSource.html">ShinobiCharts.SChartDataSource</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartDelegate.html">ISChartDelegate</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartDelegate.html">ShinobiCharts.SChartDelegate</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartLayer.html">ISChartLayer</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartLayer.html">ShinobiCharts.SChartLayer</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartLegendItem.html">ISChartLegendItem</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartLegendItem.html">ShinobiCharts.SChartLegendItem</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartSeriesCrosshairTooltipDrawerProtocol.html">ISChartSeriesCrosshairTooltipDrawerProtocol</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartSeriesCrosshairTooltipPositionerProtocol.html">ISChartSeriesCrosshairTooltipPositionerProtocol</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartSeriesCrosshairTooltipStylerProtocol.html">ISChartSeriesCrosshairTooltipStylerProtocol</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ISChartTickLabelRefreshRate.html">ISChartTickLabelRefreshRate</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartActivityIndicator.html">SChartActivityIndicator</a>
+          </td>
+          <td>Protocol for activity indicators that are displayed while data loads asynchronously.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartActivityIndicator_Extensions.html">SChartActivityIndicator_Extensions</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartActivityIndicator.html">ShinobiCharts.SChartActivityIndicator</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnimation.html">SChartAnimation</a>
+          </td>
+          <td>
+				An SChartAnimation object determines how an SChartSeries is animated.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnimationCurve.html">SChartAnimationCurve</a>
+          </td>
+          <td>Animation curve options: Bounce, EaseIn, EaseInOut, EaseOut, Linear
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnimationCurveProtocol.html">SChartAnimationCurveProtocol</a>
+          </td>
+          <td>The SChartAnimationCurve protocol allows any object to act as a curve evaluator for series' animations, as defined in SChartAnimation.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnnotation.html">SChartAnnotation</a>
+          </td>
+          <td>
+				A UIView that can be displayed on a chart - maintaining aspect ratio at all times and position in accordance with the panning of the data range.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnnotationPosition.html">SChartAnnotationPosition</a>
+          </td>
+          <td>Annotation position options: AboveData, BelowData
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAnnotationZooming.html">SChartAnnotationZooming</a>
+          </td>
+          <td>An SChartAnnotationZooming object is pinned between two points on each axis in the chart and will scale according to the current range of the axis.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxis.html">SChartAxis</a>
+          </td>
+          <td>Abstract base class for a horizontal or vertical axis providing a visual scale for chart data</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisPanTo.html">SChartAxisPanTo</a>
+          </td>
+          <td>Axis panning options: Center, End, Start
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisPosition.html">SChartAxisPosition</a>
+          </td>
+          <td>Axis position options: Normal, Reverse
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisStyle.html">SChartAxisStyle</a>
+          </td>
+          <td>Visual style properties for the axis, tick marks and labels, gridlines and grid stripes.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisTitleOrientation.html">SChartAxisTitleOrientation</a>
+          </td>
+          <td>Axis title orientation options: Horizontal, Vertical
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisTitleStyle.html">SChartAxisTitleStyle</a>
+          </td>
+          <td>The axis title style object controls the look and feel for the axis title.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisType.html">SChartAxisType</a>
+          </td>
+          <td>Axis type options: Category, DateTime, Logarithmic, Number
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartAxisZoomLevel.html">SChartAxisZoomLevel</a>
+          </td>
+          <td>Axis zoom level options: Double, Half, Original
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBandSeries.html">SChartBandSeries</a>
+          </td>
+          <td>A type of SChartSeries that uses its data points to construct a band series.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBandSeriesStyle.html">SChartBandSeriesStyle</a>
+          </td>
+          <td>Manages the appearance of an instance of SChartBandSeries on a chart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBarColumnSeries.html">SChartBarColumnSeries</a>
+          </td>
+          <td>Abstract base class for column and bar series. 
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBarColumnSeriesStyle.html">SChartBarColumnSeriesStyle</a>
+          </td>
+          <td>
+				SChartBarColumnSeriesStyle manages the look of bar and column series on a chart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBarSeries.html">SChartBarSeries</a>
+          </td>
+          <td>Displays a bar series on the chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>
+          </td>
+          <td>Manages the look and feel of an instance of SChartBarSeries.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBaselinePointStyle.html">SChartBaselinePointStyle</a>
+          </td>
+          <td>SChartBaselinePointStyle manages the appearance of data points within chart series that contain a baseline property.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBasePointStyle.html">SChartBasePointStyle</a>
+          </td>
+          <td>SChartBasePointStyle is the base class for all point styles in ShinobiCharts.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBounceAnimationCurve.html">SChartBounceAnimationCurve</a>
+          </td>
+          <td>This curve evaluator describes a curve where the value starts at 0, climbs past 1 and passes it, then returns to 1, creating a 'bounce' effect.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBounceDelayAnimationCurve.html">SChartBounceDelayAnimationCurve</a>
+          </td>
+          <td>This curve evaluator describes a curve similar to that described by SChartBounceAnimation but where the 'bounce' occurs over a shorter proportion of the duration (<tt>50%</tt>).</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBoxGestureStyle.html">SChartBoxGestureStyle</a>
+          </td>
+          <td>Visual style properties for the box zoom feature.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBubbleDataPoint.html">SChartBubbleDataPoint</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBubblePointStyle.html">SChartBubblePointStyle</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBubbleSeries.html">SChartBubbleSeries</a>
+          </td>
+          <td>
+				A type of SChartSeries that uses its data points to construct a bubble series.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartBubbleSeriesStyle.html">SChartBubbleSeriesStyle</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCandlestickSeries.html">SChartCandlestickSeries</a>
+          </td>
+          <td>A type of SChartSeries which displays Open-High-Low-Close data on a chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a>
+          </td>
+          <td>Manages the appearance of an instance of SChartCandlestickSeries on the chart.
+		</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCanvas.html">SChartCanvas</a>
+          </td>
+          <td>
+				For each ShinobiChart, one single SChartCanvas will exist to contain the drawing of all of the axes and series.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCanvasOverlay.html">SChartCanvasOverlay</a>
+          </td>
+          <td>
+				The canvas overlay is responsible for drawing objects that appear over the plot area - such as crosshairs.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCanvasUnderlay.html">SChartCanvasUnderlay</a>
+          </td>
+          <td>
+				The canvas underlay is responsible for drawing things like gridlines and the axes.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCartesianSeries.html">SChartCartesianSeries</a>
+          </td>
+          <td>Represents an instance of a cartesian series on a chart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCategoryAxis.html">SChartCategoryAxis</a>
+          </td>
+          <td>A subclass of SChartAxis designed to work with discrete data points with no linear correlation between values.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartColumnSeries.html">SChartColumnSeries</a>
+          </td>
+          <td>Displays a column series on the chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>
+          </td>
+          <td>Manages the look and feel of an instance of SChartColumnSeriesStyle.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshair.html">SChartCrosshair</a>
+          </td>
+          <td>A small circle target with lines extending to the axes, which follows the user's finger after a tap-and-hold gesture</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshairMode.html">SChartCrosshairMode</a>
+          </td>
+          <td>Crosshair mode options: Floating, SingleSeries
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshairMultiValueTooltip.html">SChartCrosshairMultiValueTooltip</a>
+          </td>
+          <td>A crosshair tooltip with multiple labels, for use with multi-valued data
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshairOutOfRangeBehavior.html">SChartCrosshairOutOfRangeBehavior</a>
+          </td>
+          <td>Tick label clipping mode options: KeepAtEdge, Hide, Remove
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+          </td>
+          <td>Visual style properties for the cross hair object SChartCrosshair
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartCrosshairTooltip.html">SChartCrosshairTooltip</a>
+          </td>
+          <td>A text label that moves with the chart crosshair</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDarkTheme.html">SChartDarkTheme</a>
+          </td>
+          <td>The SChartDarkTheme uses softer colors based on a dark background.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartData.html">SChartData</a>
+          </td>
+          <td>The SChartData protocol allows any object to act as a datapoint within a series on a ShinobiChart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartData_Extensions.html">SChartData_Extensions</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartData.html">ShinobiCharts.SChartData</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPoint.html">SChartDataPoint</a>
+          </td>
+          <td>Represents the data items contained within an SChartSeries.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPointLabel.html">SChartDataPointLabel</a>
+          </td>
+          <td>A label representing a single SChartDataPoint, styled by SChartDataPointLabelStyle.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPointLabelDisplayValues.html">SChartDataPointLabelDisplayValues</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPointLabelOrientation.html">SChartDataPointLabelOrientation</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPointLabelPosition.html">SChartDataPointLabelPosition</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataPointLabelStyle.html">SChartDataPointLabelStyle</a>
+          </td>
+          <td>The data point label style object controls the look and feel for labels appearing next to a series data point.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataSeries.html">SChartDataSeries</a>
+          </td>
+          <td>A set of data points to be visualized on the ShinobiChart. 
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDataSource.html">SChartDataSource</a>
+          </td>
+          <td>Abstract base class for your class that links your data to your chart</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDateFrequency.html">SChartDateFrequency</a>
+          </td>
+          <td>The desired frequency of tick marks on an SChartDateTimeAxis</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDateFrequencyDenomination.html">SChartDateFrequencyDenomination</a>
+          </td>
+          <td>Units for date frequencies: Days, Hours, Minute, Months, Seconds, Weeks, Years
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDateRange.html">SChartDateRange</a>
+          </td>
+          <td>An instance of SChartRange that is specific to NSDate - with each element in the range represented by an NSDate object.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDateTimeAxis.html">SChartDateTimeAxis</a>
+          </td>
+          <td>An axis that works with date/time values </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDelayBounceAnimationCurve.html">SChartDelayBounceAnimationCurve</a>
+          </td>
+          <td>
+				A curve similar to SChartBounceAnimation, but delayed.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDelayBounceWithMinimumAnimationCurve.html">SChartDelayBounceWithMinimumAnimationCurve</a>
+          </td>
+          <td>A curve similar to SChartDelayBounceAnimationCurve, but with a minimum value.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDelegate.html">SChartDelegate</a>
+          </td>
+          <td>Abstract base class for your (optional) class that accepts notifications from the ShinobiChart
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDelegate_Extensions.html">SChartDelegate_Extensions</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartDelegate.html">ShinobiCharts.SChartDelegate</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDiscontinuousDateTimeAxis.html">SChartDiscontinuousDateTimeAxis</a>
+          </td>
+          <td>A date-time axis that skips over specified time periods.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDiscontinuousNumberAxis.html">SChartDiscontinuousNumberAxis</a>
+          </td>
+          <td>A number axis that skips over specified ranges.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDiscontinuousTickLabelClipping.html">SChartDiscontinuousTickLabelClipping</a>
+          </td>
+          <td>
+				Controls discontinuous tick label clipping.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDonutSeries.html">SChartDonutSeries</a>
+          </td>
+          <td>Displays magnitude data on the chart - the larger the value of the data point, the larger the slice representing that data point.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>
+          </td>
+          <td>Manages the appearance of a SChartDonutSeries on a ShinobiChart.
+       </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartEaseInAnimationCurve.html">SChartEaseInAnimationCurve</a>
+          </td>
+          <td>This curve starts off slowly at 0.0, creating a gentle initial phase, then accelerates past 0.5 to reach 1.0.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartEaseInOutAnimationCurve.html">SChartEaseInOutAnimationCurve</a>
+          </td>
+          <td>This curve starts off slowly at 0.0, creating a slow initial phase. It accelerates past 0.5, then decelerates to reach 1.0, creating a slow exit phase.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartEaseOutAnimationCurve.html">SChartEaseOutAnimationCurve</a>
+          </td>
+          <td>This curve starts off steadily at 0.0, passes 0.5 then decelerates to reach 1.0, creating a slow exit phase.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartFlatAnimationCurve.html">SChartFlatAnimationCurve</a>
+          </td>
+          <td>This flat curve evaluator returns 1.f ('finished') for all values of t.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartGesturePanType.html">SChartGesturePanType</a>
+          </td>
+          <td>Gesture pan type options: BoxDraw, None, PanPinch
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartGLTranslation.html">SChartGLTranslation</a>
+          </td>
+          <td>A structure containing translation values which are used in our OpenGL Layer.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartGLView.html">SChartGLView</a>
+          </td>
+          <td>
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartGridStripeStyle.html">SChartGridStripeStyle</a>
+          </td>
+          <td>Visual style properties for the grid stripes that can appear between major tick marks.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartiOS7Theme.html">SChartiOS7Theme</a>
+          </td>
+          <td>
+				The SChartiOS7Theme features solid-colored series without gradients on a light background and crisp and clear
+				text to fit in with your iOS 7 app.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLayer.html">SChartLayer</a>
+          </td>
+          <td>A ShinobiChart plot area is made up of various layers that are each responsible for different elements of the chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLayer_Extensions.html">SChartLayer_Extensions</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartLayer.html">ShinobiCharts.SChartLayer</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegend.html">SChartLegend</a>
+          </td>
+          <td> An (optional) view on the chart, typically displaying explanatory information.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendItem.html">SChartLegendItem</a>
+          </td>
+          <td>Specifies the interface required by the legend to display chart series.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendItem_Extensions.html">SChartLegendItem_Extensions</a>
+          </td>
+          <td>See <a href="../ShinobiCharts/SChartLegendItem.html">ShinobiCharts.SChartLegendItem</a>.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendOrientation.html">SChartLegendOrientation</a>
+          </td>
+          <td>Legend orientation options: Horizontal, Vertical
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendPlacement.html">SChartLegendPlacement</a>
+          </td>
+          <td>Legend placement options: InsidePlotArea, OutsidePlotArea
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendPosition.html">SChartLegendPosition</a>
+          </td>
+          <td>Legend position options: BottomLeft, BottomMiddle, BottomRight, MiddleLeft, MiddleRight, TopLeft, TopMiddle, TopRight
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendStyle.html">SChartLegendStyle</a>
+          </td>
+          <td>Manages the appearance of the legend on the chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbol.html">SChartLegendSymbol</a>
+          </td>
+          <td>Abstract base class for symbols representing the series for display on the Legend.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolBandSeries.html">SChartLegendSymbolBandSeries</a>
+          </td>
+          <td>A symbol designed to represent a band series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolBarSeries.html">SChartLegendSymbolBarSeries</a>
+          </td>
+          <td>A symbol designed to represent a bar series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolBlock.html">SChartLegendSymbolBlock</a>
+          </td>
+          <td>A split colored block on a legend</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolBlockSplit.html">SChartLegendSymbolBlockSplit</a>
+          </td>
+          <td>A split colored block on a legend</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolCandlestickSeries.html">SChartLegendSymbolCandlestickSeries</a>
+          </td>
+          <td>A symbol designed to represent a candlestick series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolColumnSeries.html">SChartLegendSymbolColumnSeries</a>
+          </td>
+          <td>A symbol designed to represent a column series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolDonutSeries.html">SChartLegendSymbolDonutSeries</a>
+          </td>
+          <td>A symbol designed to represent a donut series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolLineSeries.html">SChartLegendSymbolLineSeries</a>
+          </td>
+          <td>A symbol designed to represent a line series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolOHLCSeries.html">SChartLegendSymbolOHLCSeries</a>
+          </td>
+          <td>A symbol designed to represent an OHLC series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolPieSeries.html">SChartLegendSymbolPieSeries</a>
+          </td>
+          <td>A symbol designed to represent a pie series in the chart legend.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolPointSeries.html">SChartLegendSymbolPointSeries</a>
+          </td>
+          <td>A symbol designed to represent a point series in the chart legend.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLegendSymbolScatterSeries.html">SChartLegendSymbolScatterSeries</a>
+          </td>
+          <td>A symbol designed to represent a scatter series in the chart legend.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLightTheme.html">SChartLightTheme</a>
+          </td>
+          <td>The SChartLightTheme uses brighter colors based on a white background.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLinearAnimationCurve.html">SChartLinearAnimationCurve</a>
+          </td>
+          <td>This curve progresses at a constant speed from 0.0 to 1.0.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLineCrosshairTraceStyle.html">SChartLineCrosshairTraceStyle</a>
+          </td>
+          <td>Crosshair trace style options: Horizontal, Vertical
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLineSeries.html">SChartLineSeries</a>
+          </td>
+          <td>A type of SChartSeries that uses the data points to construct a line series.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLineSeriesBaseStyle.html">SChartLineSeriesBaseStyle</a>
+          </td>
+          <td>SChartLineSeriesBaseStyle manages the appearance of an instance of SChartLineSeries and subclasses, on a chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>
+          </td>
+          <td>Manages the appearance of an instance of SChartLineSeries on a chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartLogarithmicAxis.html">SChartLogarithmicAxis</a>
+          </td>
+          <td>An SChartLogarithmicAxis is a subclass of SChartNumberAxis used for displaying logarithmic data.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMainTitleStyle.html">SChartMainTitleStyle</a>
+          </td>
+          <td>Manages the look of the main chart title.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMajorGridlineStyle.html">SChartMajorGridlineStyle</a>
+          </td>
+          <td>Visual style properties for the major grid lines.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMappedSeries.html">SChartMappedSeries</a>
+          </td>
+          <td>Represents an instance of a series that maps its data to axes on a chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMidnightTheme.html">SChartMidnightTheme</a>
+          </td>
+          <td>The SChartMidnightTheme is based around a black background with lighter features.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMovementInformation.html">SChartMovementInformation</a>
+          </td>
+          <td>A structure describing why a ShinobiChart is triggering pan and zoom delegate methods</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMultiValueDataPoint.html">SChartMultiValueDataPoint</a>
+          </td>
+          <td>Represents a data point that has values that are not related to any axes.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMultiXDataPoint.html">SChartMultiXDataPoint</a>
+          </td>
+          <td>Represents cartesian data points which have multiple x values.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartMultiYDataPoint.html">SChartMultiYDataPoint</a>
+          </td>
+          <td>Represents cartesian data points which have multiple y values.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartNumberAxis.html">SChartNumberAxis</a>
+          </td>
+          <td>A subclass of SChartAxis designed to work with data points that use NSNumber.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartNumberRange.html">SChartNumberRange</a>
+          </td>
+          <td>Represents numerical ranges on a chart axis (SChartAxis).</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartNumberSkip.html">SChartNumberSkip</a>
+          </td>
+          <td>Discontinuous axis number skip structure: Start and End
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartOHLCSeries.html">SChartOHLCSeries</a>
+          </td>
+          <td>
+				A type of SChartSeries which displays Open-High-Low-Close (OHLC) data on a chart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a>
+          </td>
+          <td>
+				Manages the appearance of an instance of SChartOHLCSeries on the chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartOrientation.html">SChartOrientation</a>
+          </td>
+          <td>Chart orientation options: Horizontal, Vertical
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPieSeries.html">SChartPieSeries</a>
+          </td>
+          <td>A series that displays magnitude data on the chart - the larger the value of the datapoint, the larger the slice representing that datapoint.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPieSeriesStyle.html">SChartPieSeriesStyle</a>
+          </td>
+          <td>Visual style properties for pie series.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPixelToPointMapper.html">SChartPixelToPointMapper</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPixelToPointMapping.html">SChartPixelToPointMapping</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPoint.html">SChartPoint</a>
+          </td>
+          <td>A 2 dimensional point structure
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPointSeries.html">SChartPointSeries</a>
+          </td>
+          <td>
+				An SChartPointSeries acts as the base class for both SChartScatterSeries and SChartBubbleSeries and concerns itself with drawing data points.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPointSeriesStyle.html">SChartPointSeriesStyle</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartPointStyle.html">SChartPointStyle</a>
+          </td>
+          <td>Manages the appearance of data points within chart series.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialChartEffect.html">SChartRadialChartEffect</a>
+          </td>
+          <td>Radial chart effects.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialDataPoint.html">SChartRadialDataPoint</a>
+          </td>
+          <td>A data point for a pie/donut series.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialLineRenderMode.html">SChartRadialLineRenderMode</a>
+          </td>
+          <td>Enum to control line rendering mode for radial charts.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialLineSeries.html">SChartRadialLineSeries</a>
+          </td>
+          <td>SChartRadialLineSeries is a type of SChartMappedSeries that uses datapoints to construct a line series on a radial chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialLineSeriesStyle.html">SChartRadialLineSeriesStyle</a>
+          </td>
+          <td>SChartRadialLineSeriesStyle manages the appearance of an instance of SChartRadialLineSeries on a chart.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialSeries.html">SChartRadialSeries</a>
+          </td>
+          <td>SChartRadialSeries is the base class for all pie or donut series within a `ShinobiChart`.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRadialSeriesDrawDirection.html">SChartRadialSeriesDrawDirection</a>
+          </td>
+          <td>Radial series animation options: Anticlockwise, Clockwise
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRange.html">SChartRange</a>
+          </td>
+          <td>Represents a range of values on a chart.
+       </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartRepeatedTimePeriod.html">SChartRepeatedTimePeriod</a>
+          </td>
+          <td>A SChartRepeatedTimePeriod represents a repeated period of time, starting at a particular point in time.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartScatterSeries.html">SChartScatterSeries</a>
+          </td>
+          <td>A type of SChartSeries that uses its data points to construct a scatter series.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>
+          </td>
+          <td>Manages the appearance of an instance of SChartScatterSeries on a chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSelection.html">SChartSelection</a>
+          </td>
+          <td>Selection options: None, Point, Selection
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeries.html">SChartSeries</a>
+          </td>
+          <td>Manages the display of a data series on a ShinobiChart.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshair.html">SChartSeriesCrosshair</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltip.html">SChartSeriesCrosshairTooltip</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipDrawer.html">SChartSeriesCrosshairTooltipDrawer</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipDrawerProtocol.html">SChartSeriesCrosshairTooltipDrawerProtocol</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipPositioner.html">SChartSeriesCrosshairTooltipPositioner</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipPositionerProtocol.html">SChartSeriesCrosshairTooltipPositionerProtocol</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipStyler.html">SChartSeriesCrosshairTooltipStyler</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesCrosshairTooltipStylerProtocol.html">SChartSeriesCrosshairTooltipStylerProtocol</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesLegendSymbolAlignment.html">SChartSeriesLegendSymbolAlignment</a>
+          </td>
+          <td>Legend symbol alignment options: Left, Right
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesOrientation.html">SChartSeriesOrientation</a>
+          </td>
+          <td>Series orientation options: Horizontal, Vertical
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSeriesStyle.html">SChartSeriesStyle</a>
+          </td>
+          <td>SChartSeriesStyle is the base class for all series styles in ShinobiCharts.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSimpleDatasource.html">SChartSimpleDatasource</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSize.html">SChartSize</a>
+          </td>
+          <td>Size structure: Height and Width
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartSpokeStyle.html">SChartSpokeStyle</a>
+          </td>
+          <td>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartStepLineSeries.html">SChartStepLineSeries</a>
+          </td>
+          <td>A type of SChartLineSeries that uses its data points to construct a step line series.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartStyle.html">SChartStyle</a>
+          </td>
+          <td>Responsible for managing the overall look of the chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTheme.html">SChartTheme</a>
+          </td>
+          <td>
+				The SChartTheme class is responsible for storing styling information for the chart's visual components,
+				such as its titles, axes, tickmarks, and series.
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickLabelClippingMode.html">SChartTickLabelClippingMode</a>
+          </td>
+          <td>Tick label clipping mode options: NeitherPersist, TicksAndLabelsPersist, TicksPersist
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickLabelFormatter.html">SChartTickLabelFormatter</a>
+          </td>
+          <td> A wrapper object that contains an appropriate NSFormatter for the axes for which it is formatting tick labels.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickLabelRefreshRate.html">SChartTickLabelRefreshRate</a>
+          </td>
+          <td>Every time the chart is panned or zoomed, its tick labels are recalulated and refreshed. This can be a CPU intensive operation, particularly on older devices.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickLabelRefreshRateDeviceBased.html">SChartTickLabelRefreshRateDeviceBased</a>
+          </td>
+          <td>This class provides a simple way to adjust the rate at which tick labels are refreshed.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickMark.html">SChartTickMark</a>
+          </td>
+          <td>A tick mark on an axis
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTickStyle.html">SChartTickStyle</a>
+          </td>
+          <td>Visual style properties for tick marks 
+       </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTimePeriod.html">SChartTimePeriod</a>
+          </td>
+          <td>Represents a period of time.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTitle.html">SChartTitle</a>
+          </td>
+          <td>A title object used by the chart and chart axes to display a UILabel with appropriate text.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTitleCentresOn.html">SChartTitleCentresOn</a>
+          </td>
+          <td>Title centering options: Canvas, Chart, PlottingArea
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTitlePosition.html">SChartTitlePosition</a>
+          </td>
+          <td>Title positioning options: Center, BottomOrLeft, TopOrRight
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./SChartTitleStyle.html">SChartTitleStyle</a>
+          </td>
+          <td>Manages the look of the titles on the chart.
+      </td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ShinobiChart.html">ShinobiChart</a>
+          </td>
+          <td>
+			A ShinobiChart displays data arranged in either cartesian or radial series. 
+			</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./ShinobiChartLog.html">ShinobiChartLog</a>
+          </td>
+          <td>Provides logging functionality for ShinobiCharts.</td>
+        </tr>
+        <tr valign="top">
+          <td>
+            <a href="./TickLabelOrientation.html">TickLabelOrientation</a>
+          </td>
+          <td>Tick label orientation options: Diagonal, Horizontal, Vertical
+      </td>
+        </tr>
+      </table>
+    </div>
+    <div class="Members">
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

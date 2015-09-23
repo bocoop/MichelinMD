@@ -1,0 +1,1142 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartLegend</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartLegend">SChartLegend  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartLegend:Summary"> An (optional) view on the chart, typically displaying explanatory information.</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartLegend:Signature">[Foundation.Register("SChartLegend", true)]<br />public class  <b>SChartLegend</b> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartLegend:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartLegend:Docs:Remarks">
+        <p>
+          <p>
+            <img src="../images/api_legend.png" class="picture" />
+          </p>
+        </p>
+        <p>
+					Series data can be displayed in a legend on a ShinobiChart.
+					The SChartLegend is a UIView-based object that represents the legend as a visual item on the chart.
+					The legend may appear in a number of preset positions within the chart.
+				</p>
+        <p>
+          <ul>
+            <li>SChartLegendPlacement.OutsidePlotArea: Configures the legend to be placed outside of the plot area.</li>
+            <li>SChartLegendPlacement.InsidePlotArea: Configures the legend to be placed inside of the plot area.</li>
+            <li>SChartLegendPlacement.OnPlotAreaBorder: Configures the legend to be placed on the plot area border.</li>
+          </ul>
+					The placement of the legend inside or outside the plot area has different effects.
+					See the <a href="../ShinobiCharts/SChartLegend.html#P:ShinobiCharts.SChartLegend.Placement">SChartLegend.Placement</a> property for more information.
+				</p>
+        <p>
+					Irrespective of how the plot area behaves, we can anchor the legend to several preset positions in the chart area.
+					<ul><li>SChartLegendPosition.TopRight: Configures the legend to be anchored in the top right of the chart area.</li><li>SChartLegendPosition.MiddleRight: Configures the legend to be anchored vertically center on the right of the chart area.</li><li>SChartLegendPosition.BottomRight: Configures the legend to be anchored in the bottom right of the chart area.</li><li>SChartLegendPosition.BottomMiddle: Configures the legend to be anchored in the center at the bottom of the chart area.</li><li>SChartLegendPosition.BottomLeft: Configures the legend to be anchored in the bottom left of the chart area.</li><li>SChartLegendPosition.MiddleLeft: Configures the legend to be anchored vertically center on the left of the chart area.</li><li>SChartLegendPosition.TopLeft: Configures the legend to be anchored in the top left of the chart area.</li><li>SChartLegendPosition.TopMiddle: Configures the legend to be anchored in the center at the top of the chart area.</li></ul>
+					See the <a href="../ShinobiCharts/SChartLegend.html#P:ShinobiCharts.SChartLegend.Position">SChartLegend.Position</a> property for more information.
+				</p>
+        <p>
+					To create a custom legend object, you can subclass SChartLegend and override its
+					<a href="../ShinobiCharts/SChartLegend.html#M:ShinobiCharts.SChartLegend.Draw()">SChartLegend.Draw()</a> method.
+					You can then assign the new legend object to <a href="../ShinobiCharts/ShinobiChart.html#P:ShinobiCharts.ShinobiChart.Legend">ShinobiChart.Legend</a>.
+				</p>
+        <p>
+					Any instance of SChartSeries will adopt the SChartLegendItem protocol, which means that series can
+					also customize how they appear in the legend.
+					SChartLegendItem allows a series to specify the title or symbol which should represent it in the legend.
+					For radial series, it allows the series to specify how each slice should be represented.
+					See the protocol's API documentation for more information.
+				</p>
+        <p>
+					More information about using SChartLegend can be found in the user guide, and in our tutorial 'The making of a legend'
+					(http://www.shinobicontrols.com/blog/posts/2012/09/10/the-making-of-a-legend).
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartLegend:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIView</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartLegend(Foundation.NSCoder)">SChartLegend</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a>)</div>
+                </td>
+                <td>A constructor that initializes the object from the data stored in the unarchiver object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart)">SChartLegend</a>
+                    </b>(<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)</div>
+                </td>
+                <td>  
+ 			Initializes the legend with a reference to the chart.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag)">SChartLegend</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartLegend(System.IntPtr)">SChartLegend</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.AutosizeLabels">AutosizeLabels</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  If this is set to true, Legend labels will autosize to fit their text.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Chart">Chart</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>
+                  </i>. A reference to the chart that the Legend belongs to.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.CornerRadius">CornerRadius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Determines the radius of the legend corners.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.FixedWidthRatio">FixedWidthRatio</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Defines a fixed ratio of the width of the overall chart which the legend will take up.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Labels">Labels</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSMutableArray</a>
+                  </i>. The labels which are contained within the legend.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.MaxSeriesPerLine">MaxSeriesPerLine</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>
+                  </i>. The maximum number of series which are shown per row in horizontal legends.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Placement">Placement</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendPlacement.html">SChartLegendPlacement</a>
+                  </i>. The position of the legend relative to the chart plot area.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Position">Position</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendPosition.html">SChartLegendPosition</a>
+                  </i>. Specifies the positioning of the legend on the chart.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.ShowSymbols">ShowSymbols</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. DEPRECATED - Use SChartLegendStyle.ShowSymbols instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a>
+                  </i>. Manages the appearance of the legend.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Symbols">Symbols</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSMutableArray</a>
+                  </i>. The symbols which are contained within the legend.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.SymbolWidth">SymbolWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The width that each symbol in the legend should have, in points.</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartLegend.Title">Title</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>.  The main function called by the chart when it requires a Legend to be drawn.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartLegend.Draw()">Draw</a>
+                  </b>()<blockquote> The main function called by the chart to construct the Legend.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartLegend.Reload()">Reload</a>
+                  </b>()<blockquote> Causes the Legend to redraw itself. Changes in series styling will not be updated within the Legend until this method has been called.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartLegend.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartLegend:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartLegend(Foundation.NSCoder)">SChartLegend Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartLegend(Foundation.NSCoder):member">
+          <div class="msummary">A constructor that initializes the object from the data stored in the unarchiver object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithCoder:")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartLegend</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSCoder</a> coder)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSCoder):Parameters">
+            <dl>
+              <dt>
+                <i>coder</i>
+              </dt>
+              <dd>The unarchiver object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSCoder):Remarks">This constructor is provided to allow the class to be initialized from an unarchiver (for example, during NIB deserialization).</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSCoder):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag)">SChartLegend Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartLegend</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart)">SChartLegend Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart):member">
+          <div class="msummary">  
+ 			Initializes the legend with a reference to the chart.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("initWithChart:")]<br />public  <b>SChartLegend</b> (<a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> _chart)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart):Parameters">
+            <dl>
+              <dt>
+                <i>_chart</i>
+              </dt>
+              <dd>The chart which will contain the legend.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">Returns</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart):Returns">An initialized legend object, or null if the legend couldn't be created.</blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(ShinobiCharts.ShinobiChart):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartLegend(System.IntPtr)">SChartLegend Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartLegend(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartLegend</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartLegend(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartLegend(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.AutosizeLabels">AutosizeLabels Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.AutosizeLabels:member">
+          <div class="msummary"> If this is set to true, Legend labels will autosize to fit their text.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("autosizeLabels", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setAutosizeLabels:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>AutosizeLabels</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.AutosizeLabels:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.AutosizeLabels:Remarks">
+				Note that the Legend frame will still be overridden if the frame is set manually,
+				but this setting will override any value of <a href="../ShinobiCharts/SChartLegend.html#P:ShinobiCharts.SChartLegend.FixedWidthRatio">SChartLegend.FixedWidthRatio</a> that has been set
+				on the legend.
+				By default, this property is set to <tt>true</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.AutosizeLabels:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Chart">Chart Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Chart:member">
+          <div class="msummary">A reference to the chart that the Legend belongs to.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("chart", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setChart:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a> <b>Chart</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Chart:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Chart:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Chart:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.ClassHandle:member">
+          <div class="msummary">The handle for this class.
+        </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.CornerRadius">CornerRadius Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.CornerRadius:member">
+          <div class="msummary">Determines the radius of the legend corners.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartLegendStyle.CornerRadius instead", false)]<br />[get: Foundation.Export("cornerRadius", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setCornerRadius:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>CornerRadius</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.CornerRadius:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.CornerRadius:Remarks">
+            <p>
+					By default, this property is set to <tt>0</tt>.  Setting this to null also equates to a radius of 0 - which results in square corners.
+				</p>
+            <p>
+					DEPRECATED - This property will be removed in a future release. Use the CornerRadius property on the SChartLegendStyle class.
+				</p>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.CornerRadius:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartLegend.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartLegend.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartLegend.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartLegend.Draw()">Draw Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartLegend.Draw():member">
+          <div class="msummary"> The main function called by the chart to construct the Legend.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("drawLegend")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Draw</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Draw():Remarks"> Override this function to create a custom Legend class. 
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Draw():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.FixedWidthRatio">FixedWidthRatio Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.FixedWidthRatio:member">
+          <div class="msummary">Defines a fixed ratio of the width of the overall chart which the legend will take up.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("fixedWidthRatio", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setFixedWidthRatio:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>FixedWidthRatio</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.FixedWidthRatio:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.FixedWidthRatio:Remarks">
+				If this value is not set, the width of the chart will be auto-calculated.
+				By default, this property is set to <tt>null</tt>.
+
+				Note that if `autosizeLabels` is set to YES (the default value) then this property will be ignored.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.FixedWidthRatio:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Labels">Labels Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Labels:member">
+          <div class="msummary">The labels which are contained within the legend.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("labels", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setLabels:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSMutableArray</a> <b>Labels</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Labels:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Labels:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Labels:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.MaxSeriesPerLine">MaxSeriesPerLine Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.MaxSeriesPerLine:member">
+          <div class="msummary">The maximum number of series which are shown per row in horizontal legends.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("maxSeriesPerLine", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setMaxSeriesPerLine:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a> <b>MaxSeriesPerLine</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.MaxSeriesPerLine:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.MaxSeriesPerLine:Remarks">By default, this property is set to <tt>4</tt>.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.MaxSeriesPerLine:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Placement">Placement Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Placement:member">
+          <div class="msummary">The position of the legend relative to the chart plot area.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("placement", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setPlacement:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="../ShinobiCharts/SChartLegendPlacement.html">SChartLegendPlacement</a> <b>Placement</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Placement:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Placement:Remarks">
+            <p>
+					The options available are:
+					<ul><li>SChartLegendPlacement.OutsidePlotArea: Configures the legend to be placed outside of the plot area.</li><li>SChartLegendPlacement.InsidePlotArea: Configures the legend to be placed inside of the plot area.</li><li>SChartLegendPlacement.OnPlotAreaBorder: Configures the legend to be placed on the plot area border.</li></ul></p>
+            <p>
+					If the legend is drawn outside of the plot area, the plot area will shrink to accommodate the legend
+					without obscuring the chart plot.
+					If the legend is drawn inside the plot area, the plot area will expand as though the legend is not there -
+					with the legend displaying over it.
+				</p>
+            <p>
+					If the legend is drawn on the plot area border, the plot area will shrink to accomodate half of the legend.
+					In this case, the legend will half overlap with the chart, and half be drawn outside the plot area.
+				</p>
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Placement:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Position">Position Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Position:member">
+          <div class="msummary">Specifies the positioning of the legend on the chart.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("position", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setPosition:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="../ShinobiCharts/SChartLegendPosition.html">SChartLegendPosition</a> <b>Position</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Position:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Position:Remarks">
+				The options available are:
+				<ul><li>SChartLegendPosition.TopRight: Configures the legend to be anchored in the top right of the chart area.</li><li>SChartLegendPosition.MiddleRight: Configures the legend to be anchored vertically center on the right of the chart area.</li><li>SChartLegendPosition.BottomRight: Configures the legend to be anchored in the bottom right of the chart area.</li><li>SChartLegendPosition.BottomMiddle: Configures the legend to be anchored in the center at the bottom of the chart area.</li><li>SChartLegendPosition.BottomLeft: Configures the legend to be anchored in the bottom left of the chart area.</li><li>SChartLegendPosition.MiddleLeft: Configures the legend to be anchored vertically center on the left of the chart area.</li><li>SChartLegendPosition.TopLeft: Configures the legend to be anchored in the top left of the chart area.</li><li>SChartLegendPosition.TopMiddle: Configures the legend to be anchored in the center at the top of the chart area.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Position:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartLegend.Reload()">Reload Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartLegend.Reload():member">
+          <div class="msummary"> Causes the Legend to redraw itself. Changes in series styling will not be updated within the Legend until this method has been called.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("reload")]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Reload</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Reload():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartLegend.Reload():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.ShowSymbols">ShowSymbols Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.ShowSymbols:member">
+          <div class="msummary">DEPRECATED - Use SChartLegendStyle.ShowSymbols instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartLegendStyle.ShowSymbols instead", false)]<br />[get: Foundation.Export("showSymbols", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />[set: Foundation.Export("setShowSymbols:", ObjCRuntime.ArgumentSemantic.UnsafeUnretained)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> <b>ShowSymbols</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.ShowSymbols:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.ShowSymbols:Remarks"> Deprecated - set this property on the style object instead..
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.ShowSymbols:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Style">Style Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Style:member">
+          <div class="msummary">Manages the appearance of the legend.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("style", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setStyle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a> <b>Style</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Style:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Style:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Style:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Symbols">Symbols Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Symbols:member">
+          <div class="msummary">The symbols which are contained within the legend.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("symbols", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setSymbols:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSMutableArray</a> <b>Symbols</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Symbols:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Symbols:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Symbols:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.SymbolWidth">SymbolWidth Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.SymbolWidth:member">
+          <div class="msummary">The width that each symbol in the legend should have, in points.</div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("symbolWidth", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setSymbolWidth:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a> <b>SymbolWidth</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.SymbolWidth:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.SymbolWidth:Remarks">
+				If this is not set by the user, each symbol will automatically take up half of the width of the legend
+				(with the chart series label/text taking up the other half).
+				By default, this property is set to <tt>24</tt>.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.SymbolWidth:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartLegend.Title">Title Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartLegend.Title:member">
+          <div class="msummary"> The main function called by the chart when it requires a Legend to be drawn.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("title", ObjCRuntime.ArgumentSemantic.Strong)]<br />[set: Foundation.Export("setTitle:", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> <b>Title</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartLegend.Title:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Title:Remarks">Override this function when creating a custom Legend object. Sets a title for the Legend.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartLegend.Title:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

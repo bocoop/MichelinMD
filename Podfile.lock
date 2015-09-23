@@ -1,0 +1,57 @@
+PODS:
+  - AFNetworking (2.1.0):
+    - AFNetworking/NSURLConnection (= 2.1.0)
+    - AFNetworking/NSURLSession (= 2.1.0)
+    - AFNetworking/Reachability (= 2.1.0)
+    - AFNetworking/Security (= 2.1.0)
+    - AFNetworking/Serialization (= 2.1.0)
+    - AFNetworking/UIKit (= 2.1.0)
+  - AFNetworking/NSURLConnection (2.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.1.0):
+    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (2.1.0)
+  - AFNetworking/Security (2.1.0)
+  - AFNetworking/Serialization (2.1.0)
+  - AFNetworking/UIKit (2.1.0):
+    - AFNetworking/NSURLConnection
+  - Dropbox-Sync-API-SDK (2.0.3)
+  - FXBlurView (1.5.3)
+  - GoogleAnalytics-iOS-SDK (3.0.3)
+  - HockeySDK (3.5.2)
+  - MBProgressHUD (0.8)
+  - Reachability (3.1.1)
+  - REFrostedViewController (2.4.2)
+  - SSKeychain (1.2.1)
+  - TPKeyboardAvoiding (1.2.2)
+  - UAAppReviewManager (0.2.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - Dropbox-Sync-API-SDK (~> 2.0.3)
+  - FXBlurView (~> 1.5.3)
+  - GoogleAnalytics-iOS-SDK (~> 3.0.3)
+  - HockeySDK (~> 3.5.2)
+  - MBProgressHUD (~> 0.8)
+  - Reachability (~> 3.1.1)
+  - REFrostedViewController (~> 2.4.2)
+  - SSKeychain (~> 1.2.1)
+  - TPKeyboardAvoiding (~> 1.2.2)
+  - UAAppReviewManager (~> 0.2.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: d397c9a76a60c670cbcd33f3ff2c5f961f724cbc
+  Dropbox-Sync-API-SDK: b7b085d7d33e0b76d61c66055a36c463b55c27ba
+  FXBlurView: b0cfd1c8dce42c282e47fb0bffa45ccf03ded664
+  GoogleAnalytics-iOS-SDK: dcd005926418f28144e9147bf8e393b3063b0066
+  HockeySDK: e0a43a1fd27b2bbb25a9ed546ed92836dee44e66
+  MBProgressHUD: 8688c331cb64702283be37ab8d7d329cdd25f251
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
+  REFrostedViewController: c891c9af0071779bbfa8b23cd44cb1e1d184775a
+  SSKeychain: 4c3206728530be0d33854fc608f75af90e637d71
+  TPKeyboardAvoiding: dbe89819cd075f77e65147e7d7d8c7389992a0c6
+  UAAppReviewManager: 69a414548b6ffa251ae2493ecfbb72fcc088729d
+
+COCOAPODS: 0.38.2

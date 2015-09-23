@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{34E22C2E-DA1E-4464-B99B-1802B69C09D6}") = "BubbleSeries", "BubbleSeries.csproj", "{885CE340-F314-4A2D-A044-4F93185B75F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|iPhone.Build.0 = Debug|iPhone
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|iPhone.ActiveCfg = Release|iPhone
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|iPhone.Build.0 = Release|iPhone
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{885CE340-F314-4A2D-A044-4F93185B75F3}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = BubbleSeries.csproj
+	EndGlobalSection
+EndGlobal

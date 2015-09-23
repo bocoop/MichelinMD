@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HandlingSelectionSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C0s-wm-4ls"/>
+                        <viewControllerLayoutGuide type="bottom" id="zul-H2-zdb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhg-De-2Pk" customClass="ShinobiChart">
+                                <rect key="frame" x="0.0" y="20" width="600" height="275"/>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.23921568630000001" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-Yd-VJk" customClass="ShinobiChart">
+                                <rect key="frame" x="0.0" y="319" width="600" height="281"/>
+                                <color key="backgroundColor" red="0.66274509800000003" green="0.69803921570000005" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ddp-Yd-VJk" firstAttribute="bottom" secondItem="zul-H2-zdb" secondAttribute="top" id="6hR-co-pxB">
+                                <variation key="heightClass=regular" constant="-10"/>
+                            </constraint>
+                            <constraint firstItem="dhg-De-2Pk" firstAttribute="top" secondItem="C0s-wm-4ls" secondAttribute="bottom" id="P24-oz-Ffy"/>
+                            <constraint firstItem="Ddp-Yd-VJk" firstAttribute="top" secondItem="dhg-De-2Pk" secondAttribute="bottom" constant="23" id="XyP-Bd-Nfh">
+                                <variation key="widthClass=regular" constant="78"/>
+                            </constraint>
+                            <constraint firstItem="dhg-De-2Pk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="o6b-CT-84d">
+                                <variation key="heightClass=regular" constant="-10"/>
+                            </constraint>
+                            <constraint firstAttribute="leading" secondItem="dhg-De-2Pk" secondAttribute="leading" id="pjb-TG-zl5">
+                                <variation key="heightClass=regular" constant="-10"/>
+                            </constraint>
+                            <constraint firstItem="Ddp-Yd-VJk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xfS-Ke-4eU">
+                                <variation key="heightClass=regular" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="dhg-De-2Pk" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="yo7-Kk-AE6">
+                                <variation key="heightClass=regular" constant="62"/>
+                            </constraint>
+                            <constraint firstItem="Ddp-Yd-VJk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="zRh-M1-OGe">
+                                <variation key="heightClass=regular" constant="-10"/>
+                            </constraint>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="columnChart" destination="dhg-De-2Pk" id="bH7-mV-JBm"/>
+                        <outlet property="pieChart" destination="Ddp-Yd-VJk" id="CT6-gJ-g3d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564.75" y="456"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,1474 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartPieSeries</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartPieSeries">SChartPieSeries  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartPieSeries:Summary">A series that displays magnitude data on the chart - the larger the value of the datapoint, the larger the slice representing that datapoint.</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartPieSeries:Signature">[Foundation.Register("SChartPieSeries", true)]<br />public class  <b>SChartPieSeries</b> : <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartPieSeries:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartPieSeries:Docs:Remarks">
+        <p>
+          <p>
+            <img src="../images/userguide_pieSeries.png" class="picture" />
+          </p>
+        </p>
+        <p>
+					SChartPieSeries inherits most of its behavior from its parent SChartDonutSeries.
+					Have a look at the SChartDonutSeries API documentation for more information on the common behavior.
+				</p>
+        <p>
+					One way in which pie series differ from donut series is with regard to styling.
+					A pie series contains an instance of SChartPieSeriesStyle, which manages its appearance.
+				</p>
+      </div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartPieSeries:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPieSeries()">SChartPieSeries</a>
+                    </b>()</div>
+                </td>
+                <td>Default constructor
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag)">SChartPieSeries</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartPieSeries(System.IntPtr)">SChartPieSeries</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.AnimationCurveType">AnimationCurveType</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimationCurve.html">SChartAnimationCurve</a>
+                  </i>. DEPRECATED - Animation curve type of the Selected slice Rotation animation
+        (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.AnimationDuration">AnimationDuration</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>. DEPRECATED - Duration of the Selected slice Rotation animation in Seconds.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.AnimationEnabled">AnimationEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether entry and exit animations are enabled for this series. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.BlockSymbolForSeries">BlockSymbolForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a>
+                  </i>. Returns a solid block of color representing a cartesian series in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPieSeries.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartRadialSeries.html#P:ShinobiCharts.SChartRadialSeries.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. The handle for this class.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.CrosshairEnabled">CrosshairEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Display a tooltip with connecting lines after the user taps-and-holds. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.DataSeries">DataSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDataSeries.html">SChartDataSeries</a>
+                  </i>. SChartDataSeries gives you access to the set of data points in the series.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.DonutCenter">DonutCenter</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a>
+                  </i>. The center of the donut, within the chart frame.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.DrawDirection">DrawDirection</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartRadialSeriesDrawDirection.html">SChartRadialSeriesDrawDirection</a>
+                  </i>. The direction in which data is drawn around the centre of the plot. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.EntryAnimation">EntryAnimation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>
+                  </i>. The animation which describes how the series will enter the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.ExitAnimation">ExitAnimation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>
+                  </i>. The animation which describes how the series will exit the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.GesturePanningEnabled">GesturePanningEnabled</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether or not panning is enabled on this series. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Hidden">Hidden</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether or not a series is hidden on the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.InnerRadius">InnerRadius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>.  The inner Radius of the series, in points.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.LabelFormatString">LabelFormatString</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. 
+				A format string to use for the labels which annotate data within a radial series.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartRadialSeries.html#P:ShinobiCharts.SChartRadialSeries.LabelFormatString">LabelFormatString</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. A format string to use for the labels which annotate data within a pie/donut series. (<i>Inherited from <a href="../ShinobiCharts/SChartRadialSeries.html">SChartRadialSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.LegendItem">LegendItem</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>
+                  </i>. 
+				The object responsible for providing the title and <tt>SChartLegendSymbol</tt> item for representing this
+				symbol in the legend.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.NumberOfDataPointsPerBin">NumberOfDataPointsPerBin</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The number of datapoints that are rendered in a single pass. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Orientation">Orientation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartSeriesOrientation.html">SChartSeriesOrientation</a>
+                  </i>. The orientation of the chart axis which is associated with the series. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.OuterRadius">OuterRadius</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>.  The outer Radius of the series, in points.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPieSeries.PieCenter">PieCenter</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a>
+                  </i>. This returns the center point of the pie, within the chart frame.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.Rotation">Rotation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>.  The current Rotation of the series, in radians.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.RotationFriction">RotationFriction</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>
+                  </i>. The amount of friction applied to this pie series after a rotation (pan) gesture finishes, and the series begins to spin. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Selected">Selected</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Whether or not the series is Selected 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.SelectedPosition">SelectedPosition</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. The angle to which the slice will rotate once selected, in radians.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPieSeries.SelectedStyle">SelectedStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartPieSeriesStyle.html">SChartPieSeriesStyle</a>
+                  </i>. Manages the appearance of the pie series when it is selected.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.SelectedStyle">SelectedStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>
+                  </i>. Manages the appearance of the donut series when it is selected.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.SelectionAnimation">SelectionAnimation</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>
+                  </i>. An animation object describing the motion of a donut series when a slice is selected. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.SelectionEnabledDuringPanning">SelectionEnabledDuringPanning</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Whether or not selection is enabled while the series is panning. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.SelectionMode">SelectionMode</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartSelection.html">SChartSelection</a>
+                  </i>. Defines what should be selected when the user taps the chart. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.ShowInLegend">ShowInLegend</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>.  Whether or not the series should be represented in the Legend. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartPieSeries.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartPieSeriesStyle.html">SChartPieSeriesStyle</a>
+                  </i>. Manages the appearance of the pie series on the chart.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#P:ShinobiCharts.SChartDonutSeries.Style">Style</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>
+                  </i>. Manages the appearance of the donut series on the chart.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.SymbolForSeries">SymbolForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a>
+                  </i>. Returns the symbol representing a cartesian series in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.TextColorForSeriesTitle">TextColorForSeriesTitle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Returns the text color used for series titles in the legend.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Title">Title</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>.  The title of the series to be displayed in the Legend. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#P:ShinobiCharts.SChartLegendItem.TitleForSeries">TitleForSeries</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. Returns the text displayed in the legend for the series. 
+       (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.TogglePointSelection">TogglePointSelection</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether the series should only allow only one selected point at a time.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.ToggleSelection">ToggleSelection</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>
+                  </i>. Dictates whether the chart should allow other series to be selected simultaneously.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.ValueKeys">ValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. 
+				Used for data points which contain values that are independent of axes (e.g. Bubble data points).
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.XValueKeys">XValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. Used for data points which contain multiple values (e.g. OHLC data points).
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.YValueKeys">YValueKeys</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>[]</i>. Used for data points which contain multiple values (e.g. OHLC data points).
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.CentreXOfDataPoint(System.nint,ShinobiCharts.ShinobiChart)">CentreXOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.CentreYOfDataPoint(System.nint,ShinobiCharts.ShinobiChart)">CentreYOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.CreateLabels(ShinobiCharts.SChartDataSource,ShinobiCharts.ShinobiChart)">CreateLabels</a>
+                  </b>(<a href="../ShinobiCharts/SChartDataSource.html">SChartDataSource</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<blockquote>Creates the labels for the slices in the donut series, and displays them on the chart.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.DrawSlice(System.nint,System.nint,System.nfloat,System.nfloat,CoreGraphics.CGPoint,System.nfloat,System.nfloat,System.Boolean,CoreGraphics.CGRect)">DrawSlice</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nfloat">nfloat</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>, <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGRect</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.GetSliceCenter(System.nint)">GetSliceCenter</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#M:ShinobiCharts.SChartLegendItem.GetSymbolForSlice(System.nint)">GetSymbolForSlice</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>)<nobr> : <a href="../ShinobiCharts/SChartLegendSymbol.html">SChartLegendSymbol</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartLegendItem.html#M:ShinobiCharts.SChartLegendItem.GetTitleForSlice(System.nint)">GetTitleForSlice</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartLegendItem.html">SChartLegendItem</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.HeightOfDataPoint(System.nint,ShinobiCharts.ShinobiChart)">HeightOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.IndexOfSliceAtAngle(System.Double)">IndexOfSliceAtAngle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a></nobr><blockquote>Returns the index of the slice in the donut series which is at the given angle in radians. (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.PrimarySeriesColorForDatapoint(ShinobiCharts.SChartData)">PrimarySeriesColorForDatapoint</a>
+                  </b>(<a href="../ShinobiCharts/SChartData.html">SChartData</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.ResetForReuse()">ResetForReuse</a>
+                  </b>()<blockquote>Resets the chart series for reuse when the data in the chart is reloaded. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.RotateSliceAtIndex(System.nint,System.Double,ShinobiCharts.SChartAnimation)">RotateSliceAtIndex</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Double">double</a>, <a href="../ShinobiCharts/SChartAnimation.html">SChartAnimation</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.SetSliceAsSelected(System.nint,System.Boolean)">SetSliceAsSelected</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.SetSpokeStyleForSpokeAtSliceIndex(ShinobiCharts.SChartSpokeStyle,System.nint)">SetSpokeStyleForSpokeAtSliceIndex</a>
+                  </b>(<a href="../ShinobiCharts/SChartSpokeStyle.html">SChartSpokeStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>)<blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.ShouldBeDrawn()">ShouldBeDrawn</a>
+                  </b>()<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a></nobr><blockquote>DEPRECATED - Use <a href="../ShinobiCharts/SChartSeries.html#P:ShinobiCharts.SChartSeries.Hidden">SChartSeries.Hidden</a> instead. (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData)">StringFor</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="../ShinobiCharts/SChartData.html">SChartData</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>
+				This method returns a string value that will represent the key of a given datapoint.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.StringFor(System.String,ShinobiCharts.SChartData,ShinobiCharts.SChartAxis)">StringFor</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="../ShinobiCharts/SChartData.html">SChartData</a>, <a href="../ShinobiCharts/SChartAxis.html">SChartAxis</a>)<nobr> : <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a></nobr><blockquote>
+				This method returns a string value that will represent the value of a given data point based on its key.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.WidthOfDataPoint(System.nint,ShinobiCharts.ShinobiChart)">WidthOfDataPoint</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="../ShinobiCharts/ShinobiChart.html">ShinobiChart</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartDonutSeries.html#M:ShinobiCharts.SChartDonutSeries.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartDonutSeries.html">SChartDonutSeries</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartSeries.html#M:ShinobiCharts.SChartSeries.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartSeries.html">SChartSeries</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartPieSeries:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartPieSeries()">SChartPieSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPieSeries():member">
+          <div class="msummary">Default constructor
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartPieSeries</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag)">SChartPieSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartPieSeries</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartPieSeries(System.IntPtr)">SChartPieSeries Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartPieSeries(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartPieSeries</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartPieSeries(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartPieSeries(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPieSeries.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPieSeries.ClassHandle:member">
+          <div class="msummary">The handle for this class.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPieSeries.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartPieSeries.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPieSeries.PieCenter">PieCenter Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPieSeries.PieCenter:member">
+          <div class="msummary">This returns the center point of the pie, within the chart frame.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("getPieCenter")]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">CoreGraphics.CGPoint</a> <b>PieCenter</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPieSeries.PieCenter:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.PieCenter:Remarks">Identical to SChartDonutSeries.GetDonutCenter.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.PieCenter:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPieSeries.SelectedStyle">SelectedStyle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPieSeries.SelectedStyle:member">
+          <div class="msummary">Manages the appearance of the pie series when it is selected.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("selectedStyle")]<br />[set: Foundation.Export("setSelectedStyle:")]<br />public virtual <a href="../ShinobiCharts/SChartPieSeriesStyle.html">SChartPieSeriesStyle</a> <b>SelectedStyle</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPieSeries.SelectedStyle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.SelectedStyle:Remarks">
+				Style settings in this object will be applied when the series is marked as selected (or a slice is selected).
+				The default settings of the style are inherited from the chart theme.
+				You can tweak the appearance of the series by modifying the style.
+			</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.SelectedStyle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartPieSeries.Style">Style Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartPieSeries.Style:member">
+          <div class="msummary">Manages the appearance of the pie series on the chart.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("style")]<br />[set: Foundation.Export("setStyle:")]<br />public virtual <a href="../ShinobiCharts/SChartPieSeriesStyle.html">SChartPieSeriesStyle</a> <b>Style</b>  { get; set; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartPieSeries.Style:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.Style:Remarks">The default settings of the style are inherited from the chart theme.
+				You can tweak the appearance of the series by modifying the style.
+		</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartPieSeries.Style:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

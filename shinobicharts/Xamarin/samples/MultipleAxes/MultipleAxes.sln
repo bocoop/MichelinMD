@@ -1,0 +1,32 @@
+
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{35040056-3C23-4040-8555-BEA60047BDD3}") = "MultipleAxes", "MultipleAxes.csproj", "{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|iPhone.Build.0 = Release|iPhone
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0A1CB84C-D619-4E5D-BA3A-E7C42DD72897}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MultipleAxes.csproj
+	EndGlobalSection
+EndGlobal

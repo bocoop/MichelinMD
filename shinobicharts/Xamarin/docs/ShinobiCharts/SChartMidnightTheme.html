@@ -1,0 +1,1903 @@
+<html>
+  <head>
+    <title>ShinobiCharts.SChartMidnightTheme</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+                    body {
+                        font-family: 'Lucida Grande',Geneva,Helvetica,Arial,sans-serif;
+                        padding: 0px 30px;
+                        margin: 0px;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                        color: #36C;
+                    }
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    .CollectionTitle {
+                        background: #485e78;
+                        background: -moz-linear-gradient(top, #485e78 0%, #252d38 100%);
+                        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#485e78), color-stop(100%,#252d38));
+                        background: -webkit-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -o-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: -ms-linear-gradient(top, #485e78 0%,#252d38 100%);
+                        background: linear-gradient(to bottom, #485e78 0%,#252d38 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485e78', endColorstr='#252d38',GradientType=0 );
+                        
+                        color: #36C;
+                        padding: 10px 30px;
+                        margin: 0px -30px;
+                    }
+                    .CollectionTitle p {
+                        font-size: 150%;
+                        color: white;
+                        margin: 10px 0px;
+                    }
+                    .CollectionTitle a:hover {
+                        color: white;
+                    }
+                    
+                    .PageTitle {
+                        font-size: 200%;
+                        font-weight: bold;
+                    }
+                    
+                    .Summary {
+                    }
+                    .Signature {
+                    }
+                    .Remarks {
+                    }
+                    .Members {
+                    }
+                    .Copyright {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .Section {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    p.Summary {
+                        margin-left: 1em;
+                    }
+                    .SectionBox {
+                        margin: 10px 0 10px 20px;
+                        font-size: 13px;
+                    }
+                    .NamespaceName {
+                        font-family: Arial;
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .NamespaceSumary {
+                    }
+                    .MemberName {
+                        font-size: 115%;
+                        font-weight: bold;
+                        margin-top: 1em;
+                    }
+                    .Subsection {
+                        font-size: 105%;
+                        font-weight: bold;
+                    }
+                    .SubsectionBox {
+                        margin-bottom: 1em;
+                    }
+                    
+                    .CodeExampleTable {
+                        background-color: #F1F5F9;
+                        border: thin solid #C7CFD5;
+                        padding: .25em;
+                    }
+                    .CodeExampleTable tbody tr:first-child {
+                        display: none;
+                    }
+                    .CodeExampleTable pre {
+                        margin: 0;
+                    }
+                    
+                    .TypesListing {
+                        font-family: Arial;
+                        border-collapse: collapse;
+                    }
+                    
+                    td {
+                        font-family: Arial;
+                        vertical-align: top;
+                    }
+                    th {
+                        font-family: Arial;
+                        text-align: left;
+                    }
+                    
+                    .TypesListing td {
+                        margin: 0px;
+                        padding: .25em;
+                        border: solid gray 1px;
+                    }
+                    
+                    .TypesListing th {
+                        margin: 0px;
+                        padding: .25em;
+                        background-color: #f2f2f2;
+                        border: solid gray 1px;
+                    }
+                    
+                    div.Footer {
+                        font-family: Arial;
+                        border-top: 1px solid gray;
+                        margin-top: 1.5em;
+                        padding-top: 0.6em;
+                        text-align: center;
+                        color: gray;
+                    }
+                    
+                    span.NotEntered {
+                        display: none;
+                    }
+                    
+                    div.Header {
+                        font-family: Arial;
+                        background: #B0C4DE;
+                        border: double;
+                        border-color: white;
+                        border-width: 7px;
+                        padding: 0.5em;
+                    }
+                    
+                    div.Header * {
+                        font-family: Arial;
+                        font-size: smaller;
+                    }
+                    
+                    div.Note {
+                    }
+                    
+                    i.ParamRef {
+                    }
+                    
+                    i.subtitle {
+                    }
+                    
+                    ul.TypeMembersIndex {
+                        font-family: Arial;
+                        text-align: left;
+                        background: #F8F8F8;
+                    }
+                    
+                    ul.TypeMembersIndex li {
+                        display: inline;
+                        margin:  0.5em;
+                    }
+                    
+                    table.HeaderTable {
+                    }
+                    
+                    table.SignatureTable {
+                    }
+                    
+                    table.Documentation,
+                    table.Enumeration,
+                    table.TypeDocumentation {
+                        border-collapse: collapse;
+                        width: 100%;
+                    }
+                    
+                    table.Documentation tr th,
+                    table.Enumeration tr th,
+                    table.TypeDocumentation tr th {
+                        font-family: Arial;
+                        background: whitesmoke;
+                        padding: 0.8em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: bottom;
+                    }
+                    
+                    table.Documentation tr td,
+                    table.Enumeration tr td,
+                    table.TypeDocumentation tr td {
+                        font-family: Arial;
+                        padding: 0.5em;
+                        border: 1px solid gray;
+                        text-align: left;
+                        vertical-align: top;
+                    }
+                    
+                    table.TypeMembers {
+                        border: 1px solid #C0C0C0;
+                        width: 100%;
+                        border-collapse: collapse;
+                    }
+                    
+                    table.TypeMembers tr td {
+                        background: #F8F8F8;
+                        border-bottom: 1px solid #C0C0C0;
+                        padding: 8px 12px;
+                    }
+                    
+                    
+                    table.TypeMembers tr td blockquote {
+                        margin: 10px 20px;
+                    }
+                    
+                    table.Documentation {
+                    }
+                    
+                    div.CodeExample {
+                        width: 100%;
+                        border: 1px solid #DDDDDD;
+                        background-color: #F8F8F8;
+                    }
+                    
+                    div.CodeExample p {
+                        margin: 0.5em;
+                        border-bottom: 1px solid #DDDDDD;
+                    }
+                    
+                    div.CodeExample div {
+                        margin: 0.5em;
+                    }
+                    
+                    div.Signature {
+                        font-family: Arial;
+                        border: 1px solid #C0C0C0;
+                        background: #F2F2F2;
+                        padding: 1em;
+                    }
+                    
+                    .SectionBox h3 {
+                        border-bottom: 1px solid black;
+                        font-size: 20px;
+                    }
+                    
+                    .SectionBox hr {
+                        display: none;
+                    }
+                    
+                    blockquote {
+                        margin: 10px;
+                    }
+                    
+                    .SectionBox h2,
+                    .SectionBox h4 {
+                        font-family: Arial;
+                        font-size: 125%;
+                        font-weight: bold;
+                        margin: 0.3em 0;
+                    }
+                    
+                    .Remarks > h2,
+                    body > div > h2 {
+                        color: #3C4B6C;
+                        font-size: 24px;
+                        font-weight: bold;
+                        margin: 10px 0;
+                    }
+                    
+                    .SectionBox ul {
+                        list-style-type: square;
+                    }
+                    .SectionBox ul li {
+                        margin: 3px 0;
+                    }
+                    
+                    .SubsectionBox dl {
+                        margin: 0;
+                    }
+                    .SubsectionBox dl dt {
+                        display: inline-block;
+                        min-width: 100px;
+                    }
+                    .SubsectionBox dl dd {
+                        display: inline;
+                        margin-left: 10px;
+                    }
+                    .SubsectionBox dl dd:after {
+                        display: block;
+                        content: '';
+                    }
+                    
+                    div[id='Public Constructors'] td:first-child {
+                        display:none;
+                    }
+                    </style>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <p>ShinobiControls Xamarin Bindings Documentation</p>
+      <a href="../index.html">ShinobiCharts</a> : <a href="index.html">ShinobiCharts Namespace</a></div>
+    <h1 class="PageTitle" id="T:ShinobiCharts.SChartMidnightTheme">SChartMidnightTheme  Class</h1>
+    <p class="Summary" id="T:ShinobiCharts.SChartMidnightTheme:Summary">The SChartMidnightTheme is based around a black background with lighter features.</p>
+    <div>
+      <h2>Syntax</h2>
+      <div class="Signature" id="T:ShinobiCharts.SChartMidnightTheme:Signature">[Foundation.Register("SChartMidnightTheme", true)]<br />public class  <b>SChartMidnightTheme</b> : <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a></div>
+    </div>
+    <div class="Remarks" id="T:ShinobiCharts.SChartMidnightTheme:Docs">
+      <h2 class="Section">Remarks</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartMidnightTheme:Docs:Remarks">Warning: The SChartMidnightTheme will be removed in a future release.</div>
+      <h2 class="Section">Requirements</h2>
+      <div class="SectionBox" id="T:ShinobiCharts.SChartMidnightTheme:Docs:Version Information">
+        <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+      <h2 class="Section" id="Members">Members</h2>
+      <div class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.
+							</p>
+        <h2 class="Section">Public Constructors</h2>
+        <div class="SectionBox" id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartMidnightTheme()">SChartMidnightTheme</a>
+                    </b>()</div>
+                </td>
+                <td> 
+          Simple constructor, creates the Style object with settings.
+	  </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Constructors</h2>
+        <div class="SectionBox" id="Protected Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag)">SChartMidnightTheme</a>
+                    </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a>)</div>
+                </td>
+                <td>Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:ShinobiCharts.SChartMidnightTheme(System.IntPtr)">SChartMidnightTheme</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>)</div>
+                </td>
+                <td>A constructor used when creating managed representations of unmanaged objects.
+      </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Properties</h2>
+        <div class="SectionBox" id="Public Properties">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BarLineWidth">BarLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all bar series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlackColor">BlackColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Black palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlackColorLowAlpha">BlackColorLowAlpha</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Black palette color with reduced alpha.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlueColorDark">BlueColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Blue palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BlueColorLight">BlueColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Blue palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BoldFontName">BoldFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the bold font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.BoxGestureStyle">BoxGestureStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartBoxGestureStyle.html">SChartBoxGestureStyle</a>
+                  </i>. Style options relating to the box gesture. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ChartStyle">ChartStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a>
+                  </i>. Style options relating to the overall chart for cartesian charts. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ChartTitleStyle">ChartTitleStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartMainTitleStyle.html">SChartMainTitleStyle</a>
+                  </i>. Style options relating to the chart title. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+        The handle for this class.
+        </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div>override </div></td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ClassHandle">ClassHandle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a>
+                  </i>. 
+        The handle for this class.
+         (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.ColumnLineWidth">ColumnLineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line Width across all column series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.CrosshairStyle">CrosshairStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartCrosshairStyle.html">SChartCrosshairStyle</a>
+                  </i>. Style options relating to the chart crosshair. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.DonutCrustThickness">DonutCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all donut series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorBrightLight">GreenColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorDark">GreenColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.GreenColorLight">GreenColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Green palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LegendStyle">LegendStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartLegendStyle.html">SChartLegendStyle</a>
+                  </i>. Style options relating to the chart legend. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LightFontName">LightFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the light font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.LineWidth">LineWidth</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent line width across all line series.
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark">Midnight_blueColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.BlueColorDark instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight">Midnight_blueColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.BlueColorLight instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark">Midnight_brownColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>.  Brown palette Color.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight">Midnight_brownColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>.  Brown palette Color with increased brightness.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark">Midnight_greenColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>.  DEPRECATED - use SChartTheme.GreenColorDark instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight">Midnight_greenColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.GreenColorLight instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor">Midnight_greyColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>.   Gray palette Color 
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel">Midnight_greyColorLabel</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Gray palette color for text labels.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha">Midnight_greyColorLowAlpha</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Gray palette color with reduced alpha.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark">Midnight_orangeColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.OrangeColorDark instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight">Midnight_orangeColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.OrangeColorLight instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor">Midnight_pinkColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - This color is no longer used.  It has been left on the API for backwards compatibility only.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha">Midnight_pinkColorLowAlpha</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - This color is no longer used.  It has been left on the API for backwards compatibility only.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark">Midnight_purpleColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.PurpleColorDark instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight">Midnight_purpleColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.PurpleColorLight instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor">Midnight_textShadowColor</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Shadow palette color for labels.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark">Midnight_yellowColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.YellowColorDark instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>[read-only]<div></div></td>
+                <td>
+                  <b>
+                    <a href="#P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight">Midnight_yellowColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. DEPRECATED - use SChartTheme.YellowColorLight instead.
+      </td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.OrangeColorDark">OrangeColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Orange palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.OrangeColorLight">OrangeColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Orange palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PieCrustThickness">PieCrustThickness</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSNumber</a>
+                  </i>. Use this setting to apply a consistent crust thickness across all pie series
+			 (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PurpleColorDark">PurpleColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Purple palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.PurpleColorLight">PurpleColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Purple palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RadialChartStyle">RadialChartStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartStyle.html">SChartStyle</a>
+                  </i>. Style options relating to the overall chart for radial charts. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorBrightLight">RedColorBrightLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorDark">RedColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RedColorLight">RedColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Red palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.RegularFontName">RegularFontName</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>
+                  </i>. The name of the regular font to use within the theme. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.XAxisRadialStyle">XAxisRadialStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the radial axis (x-axis) of any radial charts. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.XAxisStyle">XAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the x axis. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YAxisRadialStyle">YAxisRadialStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the polar axis (y-axis) of any radial charts. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YAxisStyle">YAxisStyle</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="../ShinobiCharts/SChartAxisStyle.html">SChartAxisStyle</a>
+                  </i>. Style options relating to the y axis. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YellowColorDark">YellowColorDark</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Yellow palette color.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#P:ShinobiCharts.SChartTheme.YellowColorLight">YellowColorLight</a>
+                  </b>
+                </td>
+                <td>
+                  <i>
+                    <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a>
+                  </i>. Yellow palette color with increased brightness.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Public Methods</h2>
+        <div class="SectionBox" id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddBandSeriesStyle(ShinobiCharts.SChartBandSeriesStyle,System.Boolean)">AddBandSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of band series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle,System.Boolean)">AddBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of bar series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddCandlestickSeriesStyle(ShinobiCharts.SChartCandlestickSeriesStyle,System.Boolean)">AddCandlestickSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of candlestick series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle,System.Boolean)">AddColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of column series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddDonutSeriesStyle(ShinobiCharts.SChartDonutSeriesStyle,System.Boolean)">AddDonutSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Encodes the donut series style object and stores in the array of donut series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle,System.Boolean)">AddLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Adds a series style to the array of line series styles contained within the theme.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddOHLCSeriesStyle(ShinobiCharts.SChartOHLCSeriesStyle,System.Boolean)">AddOHLCSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of ohlc series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.AddScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle,System.Boolean)">AddScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote>Stores the series style in the array of scatter series styles.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureBarSeriesStyle(ShinobiCharts.SChartBarSeriesStyle)">ConfigureBarSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureColumnSeriesStyle(ShinobiCharts.SChartColumnSeriesStyle)">ConfigureColumnSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureLineSeriesStyle(ShinobiCharts.SChartLineSeriesStyle)">ConfigureLineSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.ConfigureScatterSeriesStyle(ShinobiCharts.SChartScatterSeriesStyle)">ConfigureScatterSeriesStyle</a>
+                  </b>(<a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a>)<blockquote>DEPRECATED - We will move this off the public API in a future commit. (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.Copy(Foundation.NSZone)">Copy</a>
+                  </b>(<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSZone</a>)<nobr> : <a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObject</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBandSeriesStyle(System.nint,System.Boolean)">GetBandSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBandSeriesStyle.html">SChartBandSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBarSeriesStyle(System.nint,System.Boolean)">GetBarSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBarSeriesStyle.html">SChartBarSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetBubbleSeriesStyle(System.nint,System.Boolean)">GetBubbleSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartBubbleSeriesStyle.html">SChartBubbleSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetCandlestickSeriesStyle(System.nint,System.Boolean)">GetCandlestickSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartCandlestickSeriesStyle.html">SChartCandlestickSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetColumnSeriesStyle(System.nint,System.Boolean)">GetColumnSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartColumnSeriesStyle.html">SChartColumnSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetDonutSeriesStyle(System.nint,System.Boolean)">GetDonutSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartDonutSeriesStyle.html">SChartDonutSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetLineSeriesStyle(System.nint,System.Boolean)">GetLineSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartLineSeriesStyle.html">SChartLineSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetOHLCSeriesStyle(System.nint,System.Boolean)">GetOHLCSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartOHLCSeriesStyle.html">SChartOHLCSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetRadialLineSeriesStyle(System.nint,System.Boolean)">GetRadialLineSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartRadialLineSeriesStyle.html">SChartRadialLineSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.GetScatterSeriesStyle(System.nint,System.Boolean)">GetScatterSeriesStyle</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.nint">nint</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<nobr> : <a href="../ShinobiCharts/SChartScatterSeriesStyle.html">SChartScatterSeriesStyle</a></nobr><blockquote><span class="NotEntered">Documentation for this section has not yet been entered.</span> (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2 class="Section">Protected Methods</h2>
+        <div class="SectionBox" id="Protected Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+      </blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>override </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="../ShinobiCharts/SChartTheme.html#M:ShinobiCharts.SChartTheme.Dispose(System.Boolean)">Dispose</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a>)<blockquote> Releases unmanaged resources.
+       (<i>Inherited from <a href="../ShinobiCharts/SChartTheme.html">SChartTheme</a>.</i>)</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Members" id="T:ShinobiCharts.SChartMidnightTheme:Members">
+      <h2 class="Section" id="MemberDetails">Member Details</h2>
+      <div class="SectionBox" id="_MemberDetails">
+        <h3 id="C:ShinobiCharts.SChartMidnightTheme()">SChartMidnightTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartMidnightTheme():member">
+          <div class="msummary"> 
+          Simple constructor, creates the Style object with settings.
+	  </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[Foundation.Export("init")]<br />[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />public  <b>SChartMidnightTheme</b> ()</div>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme():Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme():Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag)">SChartMidnightTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag):member">
+          <div class="msummary">Constructor to call on derived classes to skip initialization and merely allocate the object.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartMidnightTheme</b> (<a href="javascript:alert(&quot;Documentation not found.&quot;)">Foundation.NSObjectFlag</a> t)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag):Parameters">
+            <dl>
+              <dt>
+                <i>t</i>
+              </dt>
+              <dd>Unused sentinel value</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme(Foundation.NSObjectFlag):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="C:ShinobiCharts.SChartMidnightTheme(System.IntPtr)">SChartMidnightTheme Constructor</h3>
+        <blockquote id="C:ShinobiCharts.SChartMidnightTheme(System.IntPtr):member">
+          <div class="msummary">A constructor used when creating managed representations of unmanaged objects.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]<br />protected  <b>SChartMidnightTheme</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> handle)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="C:ShinobiCharts.SChartMidnightTheme(System.IntPtr):Parameters">
+            <dl>
+              <dt>
+                <i>handle</i>
+              </dt>
+              <dd>Handle of the unmanaged object</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme(System.IntPtr):Remarks">You should not invoke this method directly.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="C:ShinobiCharts.SChartMidnightTheme(System.IntPtr):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.ClassHandle">ClassHandle Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.ClassHandle:member">
+          <div class="msummary">
+        The handle for this class.
+        </div>
+          <h2>Syntax</h2>
+          <div class="Signature">public override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr">IntPtr</a> <b>ClassHandle</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.ClassHandle:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.ClassHandle:Remarks">Not normally used by application code</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.ClassHandle:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean)">Dispose Method</h3>
+        <blockquote id="M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean):member">
+          <div class="msummary"> Releases unmanaged resources.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">protected override <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Void">void</a> <b>Dispose</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Boolean">bool</a> disposing)</div>
+          <h4 class="Subsection">Parameters</h4>
+          <blockquote class="SubsectionBox" id="M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean):Parameters">
+            <dl>
+              <dt>
+                <i>disposing</i>
+              </dt>
+              <dd>True if called by Dispose, false if called from a finalizer</dd>
+            </dl>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean):Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="M:ShinobiCharts.SChartMidnightTheme.Dispose(System.Boolean):Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark">Midnight_blueColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.BlueColorDark instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.BlueColorDark instead", false)]<br />[get: Foundation.Export("midnight_blueColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_blueColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight">Midnight_blueColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.BlueColorLight instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.BlueColorLight instead.", false)]<br />[get: Foundation.Export("midnight_blueColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_blueColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_blueColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark">Midnight_brownColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark:member">
+          <div class="msummary"> Brown palette Color.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_brownColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_brownColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark:Remarks">
+				This is used for:
+				<ul><li>The area fill underneath the sixth line series on the chart.</li><li>The sixth bar/column series on the chart.</li><li>The sixth scatter series on the chart.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight">Midnight_brownColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight:member">
+          <div class="msummary"> Brown palette Color with increased brightness.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_brownColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_brownColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight:Remarks">
+				This is used for:
+				<ul><li>The sixth line series on the chart.</li><li>The sixth bar/column series on the chart.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_brownColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark">Midnight_greenColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark:member">
+          <div class="msummary"> DEPRECATED - use SChartTheme.GreenColorDark instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.GreenColorDark instead.", false)]<br />[get: Foundation.Export("midnight_greenColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_greenColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight">Midnight_greenColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.GreenColorLight instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.GreenColorLight instead.", false)]<br />[get: Foundation.Export("midnight_greenColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_greenColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greenColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor">Midnight_greyColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor:member">
+          <div class="msummary">  Gray palette Color 
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_greyColor", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_greyColor</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor:Remarks">
+				This is used for:
+				<ul><li>The axis lines and tick marks on the chart axes.</li><li>Crosshair lines.</li><li>Tracking lines on box gestures.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel">Midnight_greyColorLabel Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel:member">
+          <div class="msummary">Gray palette color for text labels.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_greyColorLabel", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_greyColorLabel</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel:Remarks">
+				This is used for:
+				<ul><li>The chart title.</li><li>The axis titles.</li><li>Labels on the chart axes.</li><li>The text in the chart legend.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLabel:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha">Midnight_greyColorLowAlpha Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha:member">
+          <div class="msummary">Gray palette color with reduced alpha.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_greyColorLowAlpha", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_greyColorLowAlpha</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha:Remarks">This is used for major grid lines on the chart.</div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_greyColorLowAlpha:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark">Midnight_orangeColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.OrangeColorDark instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.OrangeColorDark instead.", false)]<br />[get: Foundation.Export("midnight_orangeColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_orangeColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight">Midnight_orangeColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.OrangeColorLight instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.OrangeColorLight instead.", false)]<br />[get: Foundation.Export("midnight_orangeColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_orangeColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_orangeColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor">Midnight_pinkColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor:member">
+          <div class="msummary">DEPRECATED - This color is no longer used.  It has been left on the API for backwards compatibility only.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />[get: Foundation.Export("midnight_pinkColor", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_pinkColor</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha">Midnight_pinkColorLowAlpha Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha:member">
+          <div class="msummary">DEPRECATED - This color is no longer used.  It has been left on the API for backwards compatibility only.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("", false)]<br />[get: Foundation.Export("midnight_pinkColorLowAlpha", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_pinkColorLowAlpha</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_pinkColorLowAlpha:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark">Midnight_purpleColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.PurpleColorDark instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.PurpleColorDark instead.", false)]<br />[get: Foundation.Export("midnight_purpleColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_purpleColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight">Midnight_purpleColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.PurpleColorLight instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.PurpleColorLight instead.", false)]<br />[get: Foundation.Export("midnight_purpleColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_purpleColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_purpleColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor">Midnight_textShadowColor Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor:member">
+          <div class="msummary">Shadow palette color for labels.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[get: Foundation.Export("midnight_textShadowColor", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_textShadowColor</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor:Remarks">
+				This is used for:
+				<ul><li>Shadow on text in axis labels.</li></ul></div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_textShadowColor:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark">Midnight_yellowColorDark Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.YellowColorDark instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.YellowColorDark instead.", false)]<br />[get: Foundation.Export("midnight_yellowColorDark", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_yellowColorDark</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorDark:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight">Midnight_yellowColorLight Property</h3>
+        <blockquote id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight:member">
+          <div class="msummary">DEPRECATED - use SChartTheme.YellowColorLight instead.
+      </div>
+          <h2>Syntax</h2>
+          <div class="Signature">[System.Obsolete("Use SChartTheme.YellowColorLight instead.", false)]<br />[get: Foundation.Export("midnight_yellowColorLight", ObjCRuntime.ArgumentSemantic.Strong)]<br />public virtual <a href="javascript:alert(&quot;Documentation not found.&quot;)">UIKit.UIColor</a> <b>Midnight_yellowColorLight</b>  { get; }</div>
+          <h4 class="Subsection">Value</h4>
+          <blockquote class="SubsectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight:Value">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h2 class="Section">Remarks</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight:Remarks">
+          </div>
+          <h2 class="Section">Requirements</h2>
+          <div class="SectionBox" id="P:ShinobiCharts.SChartMidnightTheme.Midnight_yellowColorLight:Version Information">
+            <b>Namespace: </b>ShinobiCharts<br /><b>Assembly: </b>ShinobiCharts (in ShinobiCharts.dll)<br /><b>Assembly Versions: </b>2.8.1.0</div>
+          <hr size="1" />
+        </blockquote>
+      </div>
+    </div>
+    <div class="Parameter">
+    </div>
+    <hr size="1" />
+    <div class="Copyright"> © 2014 Scott Logic Limited. All rights reserved </div>
+  </body>
+</html>

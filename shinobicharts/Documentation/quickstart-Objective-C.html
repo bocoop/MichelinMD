@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>quickstart-Objective-C Document</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="html/css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="html/css/stylesPrint.css" />	
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+                
+				<a id="backToIndex" href="index.html">&lt; Back to Index</a>
+				<h1><a id="libraryTitle" href="index.html">shinobicharts </a></h1>
+				<a id="developerHome" href="http://www.shinobicontrols.com/">Scott Logic Ltd</a>
+                
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode" id="pageTitleHeader">quickstart-Objective-C Document</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="quickstart-Objective-C Document" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="index.html">Index</a></li>
+	<li><a href="hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">quickstart-Objective-C Document</h1>
+					</div>
+				</div>
+			
+				<div id="container">	
+					<h1>quickstart Objective-C</h1>
+
+<h2>Introduction</h2>
+
+<p>This is a brief introduction to using the &#83;hinobiCharts component. This quick start guide will walk you through a series of simple steps introducing the key features of the charting library which includes supplying data to the chart via the datasource, simple styling and configuration of the labels, title and axes.</p>
+
+<p>At the end of this guide you will have created the following chart:</p>
+
+<p><img src="html/Images/quickstart1.png" alt="What we're aiming for"/></p>
+
+<h2>Installation</h2>
+
+<p>&#83;hinobiCharts now ships with an installer, to make it easier to get started. To run the installer open the &lsquo;&#83;hinobiCharts.dmg&rsquo; file which you downloaded from ShinobiControls and run &lsquo;install.pkg&rsquo;. When it opens up, it should look as below.</p>
+
+<p><img src="html/Images/ShinobiChartsInstaller.png"/></p>
+
+<p>The easiest way to install the &#83;hinobiCharts framework is to run the &lsquo;install.pkg&rsquo; file. This will install the framework into Xcode for you, along with the framework documentation. This means you can add the framework to your project in the same way as you would any of the frameworks which are automatically shipped with Xcode.</p>
+
+<p>If you don&rsquo;t want to run the installer, the framework is also contained within the &lsquo;&#83;hinobiCharts&rsquo; folder in the disk image. Regardless of whether you ran the installer, you should copy this folder onto your machine. Drag the &lsquo;&#83;hinobiCharts&rsquo; folder onto the Desktop icon in the disk image. This will copy the folder onto your desktop.</p>
+
+<p><img src="html/Images/ShinobiChartsFolder.png"/></p>
+
+<p>The &lsquo;&#83;hinobiCharts&rsquo; folder contains:</p>
+
+<ul>
+<li>A copy of the framework.</li>
+<li>A copy of the documentation for the framework.</li>
+<li>A set of samples to demonstrate getting started with &#83;hinobiCharts.</li>
+<li>An uninstall script for uninstalling the &#83;hinobiCharts framework &amp; documentation from Xcode.</li>
+<li>The Xamarin.ios version of the framework (only available with the Premium framework).</li>
+<li>A README file with setup steps.</li>
+<li>A change log stating the changes made in each release.</li>
+<li>A copy of the &#83;hinobiCharts Standard Licence.</li>
+<li>A text file containing the version number of the framework.</li>
+</ul>
+
+
+<h2>Draw a Simple Chart</h2>
+
+<p>Start-up Xcode and create a new project via <strong>File / New / Single View Application</strong>.</p>
+
+<p>Within your newly created project add a reference to the &#83;hinobiCharts framework. If you&rsquo;ve installed &#83;hinobiCharts using our installer, you can add this in the same way as you would any of the standard Apple frameworks.  Select your project target, and switch to the Build Phases tab.  Open the Link Binary With Libraries section, click the Plus button, find the entry for <strong>&#83;hinobiCharts.framework</strong>, and click Add.</p>
+
+<p>If you have just copied the framework onto your machine, the easiest way to add it to your project is to locate the <strong>&#83;hinobiCharts.framework</strong> and drag it directly into your project.</p>
+
+<p>&#83;hinobiCharts makes use of a few other frameworks, so add the following as well:</p>
+
+<ul>
+<li> Security.framework (Trial Version only)</li>
+<li> QuartzCore.framework</li>
+<li> OpenGLES.framework</li>
+<li> CoreText.framework</li>
+<li> libc++.dylib</li>
+</ul>
+
+
+<p>The first step is to create an instance of the chart and add it to the view. Open up the <strong>ViewController.m</strong> file and add the following import statement</p>
+
+<pre><code>#import &lt;ShinobiCharts/ShinobiCharts.h&gt;
+</code></pre>
+
+<p>Within the same file add the following to the <code>viewDidLoad</code> method:</p>
+
+<pre><code>self.view.backgroundColor = [UIColor whiteColor];
+
+CGFloat margin = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ? 10.0 : 50.0;
+ShinobiChart *chart = [[ShinobiChart alloc] initWithFrame:CGRectInset(self.view.bounds, margin, margin)];
+chart.title = @"Trigonometric Functions";
+</code></pre>
+
+<p>This instantiates the chart object, and sets its title. Note that the margin around that chart depends on the device form factor. For the iPad a larger margin is used. The <code>ShinobiChart</code> object is a <code>UIView</code> subclass, so respects resizing masks and auto-layout. Further down the same method add the following:</p>
+
+<pre><code>chart.autoresizingMask = ~UIViewAutoresizingNone;
+</code></pre>
+
+<p>This ensures that the chart frame is adjusted when the device orientation changes.</p>
+
+<p>If you have downloaded a trial version of the &#83;hinobiCharts you will have been issued with a trial license key. Add the key that you were supplied with at the location indicated below.</p>
+
+<pre><code>chart.licenseKey = @""; // TODO: add your trial licence key here!
+</code></pre>
+
+<p>The next step is to add the axes to the chart. In this example both the X and Y axes are linear, although the chart also supports date-time and category axes. Further down the same method add the following:</p>
+
+<pre><code>// add a pair of axes
+SChartNumberAxis *xAxis = [SChartNumberAxis new];
+chart.xAxis = xAxis;
+
+SChartNumberAxis *yAxis = [SChartNumberAxis new];
+chart.yAxis = yAxis;
+</code></pre>
+
+<p>Now that the chart is configured, the final step is to add it to the view. Add the following to the end of the method:</p>
+
+<pre><code>[self.view addSubview:chart];
+</code></pre>
+
+<p>Before you can see the chart in action, you need to supply some data, which brings us onto the next step &hellip;</p>
+
+<h2>Adding a Datasource</h2>
+
+<p>In order to render your data within the chart you need to supply a ‘datasource’, this is a class that adopts the <a href="html/Protocols/SChartDatasource.html">SChartDatasource</a> protocol methods.</p>
+
+<blockquote><p>If you have worked with <code>UITableView</code> the idea of a datasource should be familiar to you. The <strong>shinobichart</strong> shares the same concepts both of a datasource, for supplying data, and a delegate, for reacting to user interactions.</p></blockquote>
+
+<p>Within <strong>ViewController.m</strong> adopt the datasource protocol via the class extension, that Xcode generated for you, as follows:</p>
+
+<pre><code>@interface ViewController () &lt;SChartDatasource&gt;
+</code></pre>
+
+<p>The SChartDatasource protocol has four required methods. We&rsquo;ll take a look at each of them in turn.</p>
+
+<p>The first method <code>numberOfSeriesInSChart:</code> is used to inform the chart how many series you wish to render. Add the following implementation, with a hard-coded value of two:</p>
+
+<pre><code>- (NSInteger)numberOfSeriesInSChart:(ShinobiChart *)chart {
+    return 2;
+}
+</code></pre>
+
+<p>The next method, <code>sChart:seriesAtIndex:</code> is used to supply each series to the chart. The series objects describe the visual appearance of each series, but not their actual data values. Add the following to the view controller in order to return two different line series:</p>
+
+<pre><code>-(SChartSeries *)sChart:(ShinobiChart *)chart seriesAtIndex:(NSInteger)index {
+    SChartLineSeries *lineSeries = [SChartLineSeries new];
+
+    // the first series is a cosine curve, the second is a sine curve
+    if (index == 0) {
+        lineSeries.title = @"y = cos(x)";
+    } else {
+        lineSeries.title = @"y = sin(x)";
+    }
+
+    return lineSeries;
+}
+</code></pre>
+
+<p>The next method, <code>sChart:numberOfDataPointsForSeriesAtIndex:</code>, is used to specify the number of data points within a specific series. Add the following implementation below:</p>
+
+<pre><code>- (NSInteger)sChart:(ShinobiChart *)chart numberOfDataPointsForSeriesAtIndex:(NSInteger)seriesIndex {
+    return 100;
+}
+</code></pre>
+
+<p>In this example, both series have 100 points, but they do not have to have the same number.</p>
+
+<p>The last method required by the protocol is <code>sChart:dataPointAtIndex:forSeriesAtIndex:</code>, which the chart uses to request the value of each individual datapoint for each series. The returned datapoint must adopt the <code>SChartData</code> protocol, which specifies <code>xValue</code> and <code>yValue</code> properties. The charting framework supplies a concrete implementation of this protocol, <code>SChartDataPoint</code>, however, you have the option of implementing this protocol with your own data-objects in order to avoid the need to maintain two copies of your data.</p>
+
+<p>Add the following implementation:</p>
+
+<pre><code>- (id&lt;SChartData&gt;)sChart:(ShinobiChart *)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex {
+    SChartDataPoint *datapoint = [SChartDataPoint new];
+
+    // both functions share the same x-values
+    double xValue = dataIndex / 10.0;
+    datapoint.xValue = [NSNumber numberWithDouble:xValue];
+
+    // compute the y-value for each series
+    if (seriesIndex == 0) {
+        datapoint.yValue = [NSNumber numberWithDouble:cos(xValue)];
+    } else {
+        datapoint.yValue = [NSNumber numberWithDouble:sin(xValue)];
+    }
+
+    return datapoint;
+}
+</code></pre>
+
+<p>Now that the datasource is implemented, you can add the following to <code>viewDidLoad</code>:</p>
+
+<pre><code>chart.datasource = self;
+</code></pre>
+
+<p>At this point if you build and run, you should see a couple of series:</p>
+
+<p><img src="html/Images/quickstart2.png" alt="Basic chart"/></p>
+
+<p>With the current implementation each individual datapoint is requested via the datasource. If you have a lot of data, and it is already present in memory, you can optionally make use of the <code>sChart:dataPointsForSeriesAtIndex:</code> protocol method. Your implementation of this method should return all the points for a given series, and this method will be used instead of <code>sChart:dataPointAtIndex:forSeriesAtIndex:</code>.</p>
+
+<h2>Adding Labels and Basic Styling</h2>
+
+<p>The chart in its current state is a little plain! This section will build on the simple chart that you have created and add a bit more style.</p>
+
+<p>Firstly, the axes could do with having some labels. Also, the Y axis could do with a bit of padding around the top and bottom values to make it easier to see the top and bottom of the curves.</p>
+
+<p>Open up <strong>ViewController.m</strong> and edit the axis creation code as follows:</p>
+
+<pre><code>SChartNumberAxis *xAxis = [SChartNumberAxis new];
+xAxis.title = @"X Value";
+chart.xAxis = xAxis;
+
+SChartNumberAxis *yAxis = [SChartNumberAxis new];
+yAxis.title = @"Y Value";
+yAxis.rangePaddingLow = @(0.1);
+yAxis.rangePaddingHigh = @(0.1);
+chart.yAxis = yAxis;
+</code></pre>
+
+<p>It would be nice to see the legend on the iPad, where there is much more screen space to play with. Add the following to the <code>viewDidLoad</code> method:</p>
+
+<pre><code>chart.legend.hidden = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+</code></pre>
+
+<p>One of the most powerful features of the Shinobi charts is their gesture-based interactions. Enable pan and zoom on each axis by adding the following code:</p>
+
+<pre><code>// enable gestures
+yAxis.enableGesturePanning = YES;
+yAxis.enableGestureZooming = YES;
+xAxis.enableGesturePanning = YES;
+xAxis.enableGestureZooming = YES;
+</code></pre>
+
+<p>These properties allow the user to pan the chart with a single-finger pan gesture, and zoom using two-finger pinch.</p>
+
+<p>Finally, enable area fill by adding the following just after each series is created within <code>sChart:seriesAtIndex:</code>:</p>
+
+<pre><code>lineSeries.style.showFill = YES;
+</code></pre>
+
+<p>Each series has a style object associated with it, where the style type depends on the series type. A line series has a style object of type <a href="html/Classes/SChartLineSeriesStyle.html"><code>SChartLineSeriesStyle</code></a>. These objects have a a number of properties which you can adjust including line color, thickness and the colors used for gradient fill.</p>
+
+<p>To see the effect of the few simple changes you have just made, build and run:</p>
+
+<p><img src="html/Images/quickstart1.png" alt="What we're aiming for"/></p>
+
+<p>Now that you have created a simple chart, why not have a go at creating a column, or pie chart?</p>
+				</div>
+
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="index.html">Index</a></li>
+	<li><a href="hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2015 Scott Logic Ltd. All rights reserved. (Last updated: 2015-04-29)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			// Creates a table of contents item based on the name and adds it to the parent LI tag given.
+			function addTocItemToLi(parentLi, itemName) {
+				var disclosureSpan = document.createElement("SPAN");
+				disclosureSpan.setAttribute('class', 'nodisclosure');
+				parentLi.appendChild(disclosureSpan);
+
+                var sectionNameSpan = document.createElement("SPAN");
+                sectionNameSpan.setAttribute('class', 'sectionName');
+
+                var newA = document.createElement("A");
+                newA.setAttribute('href', '#'+itemName);
+                newA.innerHTML = itemName;
+                sectionNameSpan.appendChild(newA);
+
+                parentLi.appendChild(sectionNameSpan);
+			}
+	
+			// Creates a parent table of contents item given a target list and a name. Based on H2 tag.
+            function addParentTocItem(targetList, itemName) {
+                var newLI = document.createElement("LI");
+                newLI.setAttribute('role', 'treeItem');
+                newLI.setAttribute('class', 'children');
+                
+				addTocItemToLi(newLI, itemName);
+				targetList.appendChild(newLI);
+
+                return newLI;
+            }
+            
+			// Creates a child table of contents item given a target list and a name. Based on H3 tag.
+			function addTocChild(targetList, itemName, parent) {
+				parent.firstChild.setAttribute("class", "disclosure");
+
+				var parentUL;
+				
+				if(parent.getElementsByTagName("ul").length === 0) {
+					parentUL = document.createElement("UL");
+					parent.appendChild(parentUL);
+				}
+				else {
+					parentUL = parent.getElementsByTagName("ul")[0];
+				}
+				
+                var newLI = document.createElement("LI");
+                
+                addTocItemToLi(newLI, itemName);
+                                
+               	parentUL.appendChild(newLI);
+    		}
+
+			// Finds all tags specified in the tag_names array in the root element.
+			function findTags(root) {
+				if( root.nodeType === 1 && root.nodeName !== 'script' ) {
+				
+					if( tag_names.hasOwnProperty(root.nodeName.toLowerCase()) ) {
+						headings.push( root );
+					} 
+					else {
+						for( var i = 0; i < root.childNodes.length; i++ ) {
+							findTags(root.childNodes[i]);
+						}
+					}
+				}
+			}
+			
+			// Adds click listeners to every link in the table of contents.
+			function setupTocClicks () {
+				var tocList = document.getElementById('toc');
+
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+			}
+			
+			var headings = [];
+			var tag_names = {
+                    h1:1,
+    				h2:1,
+    				h3:1,
+				};
+			
+			
+			function init() {
+				findTags(document.body);
+				
+				var lastH2;
+				for( var i = 0; i < headings.length; i++ ) {
+   					var hName = headings[i].innerHTML;
+   					
+   					var newA = document.createElement("A");
+					newA.setAttribute('name', hName);
+					headings[i].parentNode.insertBefore(newA, headings[i]);
+   					
+   					if(headings[i].nodeName.toLowerCase() === "h1") {
+                        if (headings[i].id.toLowerCase() != "pagetitleheader" &&
+                            (headings[i].className == undefined || headings[i].className != "title title-header")) {
+   					   	   lastH2 = addParentTocItem(document.getElementById("toc"), hName);
+                        }
+   					}
+   					else if (lastH2 && headings[i].nodeName.toLowerCase() === "h2") {
+   						addTocChild(document.getElementById("toc"), hName, lastH2);
+   					}
+				}
+				
+				setupTocClicks();
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+
+
+	</body>
+</html>
